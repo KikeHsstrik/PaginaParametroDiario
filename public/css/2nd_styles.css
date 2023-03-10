@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
+
+/* 
+Colores de pagina */
+.color-verde1-default{
+    background-color: #b3de83;
+}
+
+
+.color-verde2-default{
+    background-color: #009D0E;
+}
+
+.fondo-verdecuadro{
+  background-image: url(../img/nav.jpeg);
+  background-repeat: no-repeat;
+  background-position: center center;
+ 
+
+  background-size: cover;
+}
+
+.color-verde3-default{
+    background: #E2F484;
+    
+
+
+
+}
+
+
+
+
+
+.text-verde {
+    color: #017302 !important;
+  }
+
+
+.textcolor-verde1{
+    color: #009D0E;
+}
+
+
+
+
+/* Estilo de alerta para formulario de denuncia */
