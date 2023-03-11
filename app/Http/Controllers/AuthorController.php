@@ -12,6 +12,7 @@ use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use routes\author;
 
 
 class AuthorController extends Controller

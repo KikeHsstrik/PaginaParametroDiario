@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <form action="{{ route('author.posts.update-post',['post_id'=>Request('post_id')]) }}" method="post" id="editPostForm" enctype="multipart/form-data">
+  <form  action="{{ route('author.posts.update-post',['post_id'=>Request('post_id')]) }}" method="post" id="editPostForm" enctype="multipart/form-data">
     @csrf
       <div class="card">
         <div class="card-body">
