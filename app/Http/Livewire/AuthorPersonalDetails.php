@@ -33,7 +33,7 @@ class AuthorPersonalDetails extends Component
         $this->emit('updateAuthorProfileHeader');
         $this->emit('updateTopHeader');
 
-        $this->showToastr('Your Profile info have been successfully updated.','success');
+        $this->showToastr('La información de tu perfil se ha actualizado correctamente.','success');
     }
 
     public function showToastr($message, $type){

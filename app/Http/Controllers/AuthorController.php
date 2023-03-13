@@ -49,9 +49,9 @@ class AuthorController extends Controller
              $user->update([
                  'picture'=>$new_picture_name
              ]);
-             return response()->json(['status'=>1, 'msg'=>'Your profile picture has been successfully updated.']);
+             return response()->json(['status'=>1, 'msg'=>'Tu foto de perfil se ha actualizado correctamente.']);
         }else{
-            return response()->json(['status'=>0, 'Something went wrong']);
+            return response()->json(['status'=>0, 'Algo salió mal']);
         }
     }
 
@@ -72,9 +72,9 @@ class AuthorController extends Controller
                 $settings->update([
                     'blog_logo'=>$filename
                 ]);
-                return response()->json(['status'=>1, 'msg'=>'Larablog logo has been successfully updated.']);
+                return response()->json(['status'=>1, 'msg'=>'El logotipo se ha actualizado correctamente.']);
             }else{
-                return response()->json(['status'=>0, 'msg'=>'Something went wrong']);
+                return response()->json(['status'=>0, 'msg'=>'Algo salió mal']);
             }
         }
     }
@@ -95,9 +95,9 @@ class AuthorController extends Controller
            $settings->update([
                'blog_favicon'=>$filename
            ]);
-           return response()->json(['status'=>1, 'msg'=>'Blog favicon has been successfully updated.']);
+           return response()->json(['status'=>1, 'msg'=>'El favicon se ha actualizado correctamente.']);
         }else{
-            return response()->json(['status'=>0, 'msg'=>'Something went wrong']);
+            return response()->json(['status'=>0, 'msg'=>'Algo salió mal']);
         }
     }
 
@@ -145,12 +145,12 @@ class AuthorController extends Controller
                  $saved = $post->save();
 
                  if($saved){
-                    return response()->json(['code'=>1, 'msg'=>'New post has been successfully created.']);
+                    return response()->json(['code'=>1, 'msg'=>'Se ha creado correctamente una nueva noticia.']);
                  }else{
-                    return response()->json(['code'=>3, 'msg'=>'Something went wrong ins saving post data.']);
+                    return response()->json(['code'=>3, 'msg'=>'Algo ha fallado al guardar los datos de la entrada.']);
                  }
             }else{
-                return response()->json(['code'=>3,'msg'=>'Something went wrong for uploading featured image.']);
+                return response()->json(['code'=>3,'msg'=>'Algo salió mal al subir la imagen destacada.']);
             }
         }
     }
@@ -224,13 +224,13 @@ class AuthorController extends Controller
            $saved = $post->save();
 
            if( $saved ){
-            return response()->json(['code'=>1,'msg'=>'Post has been successfully updated.']);
+            return response()->json(['code'=>1,'msg'=>'La noticia se ha actualizado correctamente.']);
            }else{
-            return response()->json(['code'=>3,'msg'=>'Something went wrong for updating post.']);
+            return response()->json(['code'=>3,'msg'=>'Algo salió mal para actualizar la noticia.']);
            }
 
         }else{
-            return response()->json(['code'=>3,'msg'=>'Error in uploading new feaured image.']);
+            return response()->json(['code'=>3,'msg'=>'Error al cargar la nueva imagen destacada.']);
         }
 
         }else{
@@ -249,9 +249,9 @@ class AuthorController extends Controller
             $saved = $post->save();
 
             if($saved){
-                return response()->json(['code'=>1,'msg'=>'Post has been successfully updated.']);
+                return response()->json(['code'=>1,'msg'=>'La noticia se ha actualizado correctamente.']);
             }else{
-                return response()->json(['code'=>3,'msg'=>'Something went wrong for updating post.']);
+                return response()->json(['code'=>3,'msg'=>'Algo salió mal al actualizar la noticia.']);
             }
         }
     }

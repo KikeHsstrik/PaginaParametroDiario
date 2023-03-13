@@ -10,10 +10,10 @@
     <div class="card">
         <ul class="nav nav-tabs" data-bs-toggle="tabs">
           <li class="nav-item">
-            <a href="#tabs-details" class="nav-link active" data-bs-toggle="tab">Personal Details</a>
+            <a href="#tabs-details" class="nav-link active" data-bs-toggle="tab">Datos personales</a>
           </li>
           <li class="nav-item">
-            <a href="#tabs-password" class="nav-link" data-bs-toggle="tab">Change Password</a>
+            <a href="#tabs-password" class="nav-link" data-bs-toggle="tab">Cambiar contraseña</a>
           </li>
         </ul>
         <div class="card-body">

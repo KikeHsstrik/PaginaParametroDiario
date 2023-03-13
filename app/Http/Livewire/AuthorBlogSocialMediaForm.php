@@ -36,9 +36,9 @@ class AuthorBlogSocialMediaForm extends Component
         ]);
 
         if($update){
-            $this->showToastr('Blog Social Media have been successfully updated.','success');
+            $this->showToastr('Las Redes Sociales se han actualizado correctamente.','success');
         }else{
-            $this->showToastr('Something went wrong','error');
+            $this->showToastr('Algo salió mal','error');
         }
     }
 

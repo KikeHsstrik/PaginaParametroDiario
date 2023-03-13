@@ -93,17 +93,17 @@ class Authors extends Component
 
             sendMail($mailConfig);
 
-            $this->showToastr('New author has been added to blog.','success');
+            $this->showToastr('Se ha añadido un nuevo autor','success');
             $this->name = $this->email = $this->username = $this->author_type = $this->direct_publisher = null;
             $this->dispatchBrowserEvent('hide_add_author_modal');
 
 
           }else{
-             $this->showToastr('Something went wrong', 'error');
+             $this->showToastr('Algo salió mal', 'error');
           }
 
         }else{
-            $this->showToastr('You are offline, check your connection and submit form again later','error');
+            $this->showToastr('Está desconectado, compruebe su conexión y vuelva a enviar el formulario más tarde','error');
         }
 
     }
@@ -138,7 +138,7 @@ public function updateAuthor(){
             'direct_publish'=>$this->direct_publisher,
         ]);
 
-        $this->showToastr('Author details has been successfully updated.','success');
+        $this->showToastr('Los datos del autor se han actualizado correctamente.','success');
         $this->dispatchBrowserEvent('hide_edit_author_modal');
     }
 }
@@ -146,8 +146,8 @@ public function updateAuthor(){
 public function deleteAuthor($author){
     // dd(['Delete author:', $author]);
     $this->dispatchBrowserEvent('deleteAuthor',[
-        'title'=>'Are you sure?',
-        'html'=>'You want to delete this author: <br><b>'.$author['name'].'</b>',
+        'title'=>'¿Seguro?',
+        'html'=>'Desea eliminar a este autor: <br><b>'.$author['name'].'</b>',
         'id'=>$author['id'],
     ]);
 }
@@ -163,7 +163,7 @@ public function deleteAuthorAction($id){
         File::delete(public_path($picture_full_path));
     }
     $author->delete();
-    $this->showToastr('Author has been successfull deleted.', 'info');
+    $this->showToastr('El autor ha sido eliminado con éxito.', 'info');
     
 }
 

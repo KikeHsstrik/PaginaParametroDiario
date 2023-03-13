@@ -31,10 +31,10 @@ class AuthorGeneralSettings extends Component
         ]);
 
         if($update){
-            $this->showToastr('General Settings have been successfully updated.','success');
+            $this->showToastr('La configuración general se ha actualizado correctamente.','success');
             $this->emit('updateAuthorFooter');
         }else{
-            $this->showToastr('Something went wrong!','error');
+            $this->showToastr('¡Algo salió mal!','error');
         }
     }
 

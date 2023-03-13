@@ -7,7 +7,7 @@
                   <ul class="nav nav-tabs card-header-tabs">
                     <h4>Categorías</h4>
                     <li class="nav-item ms-auto">
-                        <a href="" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#categories_modal">Add Category</a>
+                        <a href="" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#categories_modal">Añadir categoría</a>
                     </li>
                   </ul>
                 </div>
@@ -31,8 +31,8 @@
                               </td>
                               <td>
                                 <div class="btn-group">
-                                     <a href="#" class="btn btn-sm btn-primary" wire:click.prevent='editCategory({{$category->id}})'>Edit</a> &nbsp;
-                                     <a href="#" wire:click.prevent='deleteCategory({{$category->id}})' class="btn btn-sm btn-danger">Delete</a>
+                                     <a href="#" class="btn btn-sm btn-primary" wire:click.prevent='editCategory({{$category->id}})'>Editar</a> &nbsp;
+                                     <a href="#" wire:click.prevent='deleteCategory({{$category->id}})' class="btn btn-sm btn-danger">Borrar</a>
                                 </div>
                                
                               </td>
@@ -40,7 +40,7 @@
                                  
                             @empty
                                 <tr>
-                                    <td colspan="3"><span class="text-danger">No category found.</span></td>
+                                    <td colspan="3"><span class="text-danger">No se ha encontrado ninguna categoría.</span></td>
                                 </tr>
                             @endforelse
                           </tbody>
@@ -118,7 +118,7 @@
             @endif
           >
             <div class="modal-header">
-              <h5 class="modal-title">{{ $updateCategoryMode ? 'Update Category' : 'Add category' }}</h5>
+              <h5 class="modal-title">{{ $updateCategoryMode ? 'Actualizar categoría' : 'Añadir categoría' }}</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -126,14 +126,14 @@
                     <input type="hidden" wire:model='selected_category_id'>
                 @endif
                 <div class="mb-3">
-                    <label class="form-label">Category name</label>
-                    <input type="text" class="form-control" name="example-text-input" placeholder="Enter category name" wire:model='category_name'>
+                    <label class="form-label">Nombre de la categoría</label>
+                    <input type="text" class="form-control" name="example-text-input" placeholder="Introduce el nombre de la categoría" wire:model='category_name'>
                     <span class="text-danger">@error('category_name'){{ $message }}@enderror</span>
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">{{ $updateCategoryMode ? 'Update' : 'Save' }}</button>
+              <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">{{ $updateCategoryMode ? 'Actualizar' : 'Guardar' }}</button>
             </div>
           </form>
         </div>
@@ -158,10 +158,10 @@
                     <input type="hidden" wire:model='selected_subcategory_id'>
                 @endif
                 <div class="mb-3">
-                    <div class="form-label">Parent Category</div>
+                    <div class="form-label">Categoría principal</div>
                     <select class="form-select" wire:model='parent_category'>
                       
-                      <option value="0">-- Uncategorized -- </option>
+                      <option value="0">-- Sin categorizar --</option>
                   
                       @foreach(\App\Models\Category::all() as $category)
                         <option value="{{ $category->id }}">{{ $category->category_name }}</option>
@@ -170,14 +170,14 @@
                     <span class="text-danger">@error('parent_category'){{ $message }}@enderror</span>
                    </div>
                    <div class="mb-3">
-                    <label class="form-label">SubCategory name</label>
-                    <input type="text" class="form-control" name="example-text-input" placeholder="Enter Subcategory name" wire:model='subcategory_name'>
+                    <label class="form-label">Nombre de subcategoría</label>
+                    <input type="text" class="form-control" name="example-text-input" placeholder="Ingrese el nombre de la subcategoría" wire:model='subcategory_name'>
                     <span class="text-danger">@error('subcategory_name'){{ $message }}@enderror</span>
                   </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">{{ $updateSubCategoryMode ? 'Update' : 'Save' }}</button>
+              <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">{{ $updateSubCategoryMode ? 'Actualizar' : 'Guardar' }}</button>
             </div>
           </form>
         </div>

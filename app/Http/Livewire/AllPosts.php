@@ -63,9 +63,9 @@ class AllPosts extends Component
         $delete_post = $post->delete();
 
         if( $delete_post ){
-            $this->showToastr('Post has been successfully deleted.','success');
+            $this->showToastr('La noticia se ha eliminado correctamente.','success');
         }else{
-            $this->showToastr('Something went wrong.','error');
+            $this->showToastr('Algo salió mal.','error');
         }
     }
 

@@ -6,7 +6,7 @@
     <div class="row align-items-center">
       <div class="col">
         <h2 class="page-title">
-          Add new Post
+          Añadir Nueva Noticia
         </h2>
       </div>
     </div>
@@ -19,21 +19,21 @@
            <div class="row">
             <div class="col-md-9">
                 <div class="mb-3">
-                    <label class="form-label">Post title</label>
+                    <label class="form-label">Título de la Noticia</label>
                     <input type="text" class="form-control" name="post_title" placeholder="Enter post title">
                     <span class="text-danger error-text post_title_error"></span>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Post content</label>
-                    <textarea class="ckeditor form-control" name="post_content" rows="6" placeholder="Content.." id="post_content"></textarea>
+                    <label class="form-label">Contenido de la Noticia</label>
+                    <textarea class="ckeditor form-control" name="post_content" rows="6" placeholder="Contenido.." id="post_content"></textarea>
                     <span class="text-danger error-text post_content_error"></span>
                   </div>
             </div>
             <div class="col-md-3">
                 <div class="mb-3">
-                    <div class="form-label">Post category</div>
+                    <div class="form-label">Categoría de la noticia</div>
                     <select class="form-select" name="post_category">
-                      <option value="">No selected</option>
+                      <option value="">No seleccionado</option>
                       @foreach(\App\Models\SubCategory::all() as $category)
                         <option value="{{ $category->id }}">{{ $category->subcategory_name }}</option>
                       @endforeach
@@ -41,7 +41,7 @@
                     <span class="text-danger error-text post_category_error"></span>
                   </div>
                   <div class="mb-3">
-                    <div class="form-label">Featured image</div>
+                    <div class="form-label">Imagen de portada</div>
                     <input type="file" class="form-control" name="featured_image">
                     <span class="text-danger error-text featured_image_error"></span>
                   </div>
@@ -49,10 +49,10 @@
                         <img src="" alt="" class="img-thumbnail" id="image-previewer" data-ijabo-default-img=''>
                   </div>
                   <div class="mb-3">
-                    <label for="" class="form-label">Post tags</label>
-                    <input type="text" class="form-control" name="post_tags">
+                    <label for="" class="form-label" >Etiqueta de noticia</label>
+                    <input type="text" class="form-control" name="post_tags" placeholder="Escribe una etiqueta..">
                   </div>
-                  <button type="submit" class="btn btn-primary">Save post</button>
+                  <button type="submit" class="btn btn-primary">Guardar Noticia</button>
             </div>
            </div>
         </div>

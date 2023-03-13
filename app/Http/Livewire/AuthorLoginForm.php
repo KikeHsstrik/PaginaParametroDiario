@@ -25,19 +25,19 @@ class AuthorLoginForm extends Component
                  'login_id'=>'required|email|exists:users,email',
                  'password'=>'required|min:5',
              ],[
-                 'login_id'=>'Email or Username is required',
-                 'login_id.email'=>'Invalid email address',
-                 'login_id.exists'=>'Email is not registered',
-                 'password.required'=>'Password is required',
+                 'login_id'=>'Se requiere correo electrónico o nombre de usuario',
+                 'login_id.email'=>'Dirección de correo electrónico no válida',
+                 'login_id.exists'=>'El correo electrónico no está registrado',
+                 'password.required'=>'Se requiere contraseña',
              ]);
         }else{
             $this->validate([
                 'login_id'=>'required|exists:users,username',
                 'password'=>'required|min:5',
             ],[
-                'login_id.required'=>'Email or Username is required',
-                'login_id.exists'=>'Username is not registered',
-                'password.required'=>'Password is required',
+                'login_id.required'=>'Se requiere correo electrónico o nombre de usuario',
+                'login_id.exists'=>'El nombre de usuario no está registrado',
+                'password.required'=>'Se requiere contraseña',
             ]);
         }
 
@@ -48,7 +48,7 @@ class AuthorLoginForm extends Component
         $checkUser = User::where($fieldType, $this->login_id)->first();
         if($checkUser->blocked == 1){
              Auth::guard('web')->logout();
-             return redirect()->route('author.login')->with('fail','Your Account has been blocked.');
+             return redirect()->route('author.login')->with('fail','Tu cuenta ha sido bloqueada.');
         }else{
             // return redirect()->route('author.home');
             if( $this->returnUrl != null ){
@@ -58,7 +58,7 @@ class AuthorLoginForm extends Component
             }
         }
     }else{
-        session()->flash('fail','Incorrect Email/Username or Password');
+        session()->flash('fail','Correo electrónico/nombre de usuario o contraseña incorrectos');
     }
 
 

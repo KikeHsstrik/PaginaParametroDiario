@@ -6,7 +6,7 @@
     <div class="row align-items-center">
       <div class="col">
         <h2 class="page-title">
-          Edit post
+          Editar Noticia
         </h2>
       </div>
     </div>
@@ -19,21 +19,21 @@
            <div class="row">
             <div class="col-md-9">
                 <div class="mb-3">
-                    <label class="form-label">Post title</label>
+                    <label class="form-label">Título de la noticia</label>
                     <input type="text" class="form-control" name="post_title" placeholder="Enter post title" value="{{ $post->post_title }}">
                     <span class="text-danger error-text post_title_error"></span>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Post content</label>
+                    <label class="form-label">Contenido de la noticia</label>
                     <textarea class="ckeditor form-control" name="post_content" rows="6" placeholder="Content.." id="post_content">{!! $post->post_content !!}</textarea>
                     <span class="text-danger error-text post_content_error"></span>
                   </div>
             </div>
             <div class="col-md-3">
                 <div class="mb-3">
-                    <div class="form-label">Post category</div>
+                    <div class="form-label">Categoría de la noticia</div>
                     <select class="form-select" name="post_category">
-                      <option value="">No selected</option>
+                      <option value=""> No seleccionado s</option>
                       @foreach(\App\Models\SubCategory::all() as $category)
                         <option value="{{ $category->id }}" {{ $post->category_id == $category->id ? 'selected' : '' }}>{{ $category->subcategory_name }}</option>
                       @endforeach
@@ -41,7 +41,7 @@
                     <span class="text-danger error-text post_category_error"></span>
                   </div>
                   <div class="mb-3">
-                    <div class="form-label">Featured image</div>
+                    <div class="form-label">Imagen de portada</div>
                     <input type="file" class="form-control" name="featured_image">
                     <span class="text-danger error-text featured_image_error"></span>
                   </div>
@@ -49,10 +49,10 @@
                         <img src="" alt="" class="img-thumbnail" id="image-previewer" data-ijabo-default-img='/storage/images/post_images/thumbnails/resized_{{$post->featured_image}}'>
                   </div>
                   <div class="mb-3">
-                    <label for="" class="form-label">Post tags</label>
-                    <input type="text" class="form-control" name="post_tags" value="{{ $post->post_tags }}">
+                    <label for="" class="form-label">Etiqueta de noticia</label>
+                    <input type="text" class="form-control"  name="post_tags" placeholder="Escribe una etiqueta.."  value="{{ $post->post_tags }}">
                   </div>
-                  <button type="submit" class="btn btn-primary">Update post</button>
+                  <button type="submit" class="btn btn-primary">Actualizar noticia</button>
             </div>
            </div>
         </div>

@@ -6,7 +6,7 @@
     
 
 <header class="navigation  fondo-verdecuadro">
-    <div class="container-fluid d-none d-lg-block">
+     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center color-verde1-default px-lg-5">
             <div class="col-lg-12">
                 <nav class="navbar justify-content-center  navbar-expand-sm color-verde1-default  p-0">
@@ -41,17 +41,20 @@
             </div>
             
         </div>
-    </div>
+    </div> 
     <div class="container">
 
-
-    
-        <nav class="navbar navbar-expand-lg  navbar-dark navbar-light px-0">
+        <nav class="navbar navbar-expand-lg  navbar-light px-0">
             <a class="navbar-brand order-1 py-0" href="/">
                 <img loading="prelaod" decoding="async" class="img-fluid" src="{{ blogInfo()->blog_logo }}"
                     alt="{{ blogInfo()->blog_name }}" style="max-width: 100px">
             </a>
             
+            <div class="navbar-actions order-3 ml-0 ml-md-4">
+                <button aria-label="navbar toggler" class="navbar-toggler border-0" type="button"
+                    data-toggle="collapse" data-target="#navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
         
             <form action="{{ route('search_posts') }}" class="search order-lg-3 order-md-2 order-3 ml-auto">
                 
@@ -83,8 +86,7 @@
                     <li class="nav-item"> <a class="nav-link" href="{{ route('category_posts',$subcategory->slug) }}">{{ $subcategory->subcategory_name }}</a>
                     </li>
                     @endforeach
-                    <li class="nav-item"> <a class="nav-link" href="">Denuncia Ciudadana</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link"  >Denuncia Ciudadana</a> </li>
                 </ul>
             </div>
         </nav>

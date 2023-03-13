@@ -22,15 +22,20 @@ class AuthorResetForm extends Component
             'email'=>'required|email|exists:users,email',
             'new_password'=>'required|min:5',
             'confirm_new_password'=>'same:new_password',
-        ],[
-            'email.required'=>'The email field is required',
-            'email.email'=>'Invalid email address',
-            'email.exists'=>'This email is not registered',
-            'new_password.required'=>'Enter new password',
-            'new_password.min'=>'Minimun characters must be 5',
-            'confirm_new_password'=>'The confirm new password and new password must match'
+        ],
+        
+        [
+            'email.required'=>'El campo de correo electrónico es obligatorio',
+            'email.email'=>'Dirección de correo electrónico no válida',
+            'email.exists'=>'Este correo no está registrado',
+            'new_password.required'=>'Ingrese nueva contraseña',
+            'new_password.min'=>'Los caracteres mínimos deben ser 5',
+            'confirm_new_password'=>'La confirmación de nueva contraseña y la nueva contraseña deben coincidir'
+
         ]);
 
+
+        
         $check_token = DB::table('password_resets')->where([
             'email'=>$this->email,
             'token'=>$this->token,

@@ -23,7 +23,7 @@
             <a href="#" class="btn btn-primary" onclick="event.preventDefault();document.getElementById('changeAuthorPictureFile').click();">
               <!-- Download SVG icon from http://tabler-icons.io/i/message -->
               <!-- SVG icon code -->
-              Change picture
+              Cambiar la imagen
             </a>
           </div>
         </div>

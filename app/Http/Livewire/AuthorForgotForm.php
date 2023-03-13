@@ -17,9 +17,9 @@ class AuthorForgotForm extends Component
         $this->validate([
             'email'=>'required|email|exists:users,email'
         ],[
-            'email.require'=>'The :attribute is required',
-            'email.email'=>'Invalid email address',
-            'email.exists'=>'The :attribute is not registered'
+            'email.require'=>'El :attribute se requiere',
+            'email.email'=>'Dirección de correo electrónico no válida',
+            'email.exists'=>'El :attribute no está registrado'
         ]);
 
         $token = base64_encode(Str::random(64));
@@ -30,11 +30,11 @@ class AuthorForgotForm extends Component
         ]);
         $user = User::where('email', $this->email)->first();
         $link = route('author.reset-form',['token'=>$token, 'email'=>$this->email]);
-        $body_message = "We are received a request to reset the password for <b>Larablog</b> account associated with ".$this->email.". <br> You can reset your password by clicking the button below.";
+        $body_message = "Recibimos una solicitud para restablecer la contraseña de <b> Parametro Diario </b> cuenta asociada a ".$this->email.". <br> Puede restablecer su contraseña haciendo clic en el botón de abajo.";
         $body_message.='<br>';
-        $body_message.='<a href="'.$link.'" target="_blank" style="color:#FFF;border-color:#22bc66;border-style:solid;border-width:10px 180px; background-color:#22bc66;display:inline-block;text-decoration:none;border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,0.16);-webkit-text-size-adjust:none;box-sizing:border-box">Reset Password</a>';
+        $body_message.='<a href="'.$link.'" target="_blank" style="color:#FFF;border-color:#22bc66;border-style:solid;border-width:10px 180px; background-color:#22bc66;display:inline-block;text-decoration:none;border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,0.16);-webkit-text-size-adjust:none;box-sizing:border-box">Restablecer la contraseña</a>';
         $body_message.='<br>';
-        $body_message.='If you did not request for a password reset, please ignore this email';
+        $body_message.='Si no solicitó un restablecimiento de contraseña, ignore este correo electrónico';
 
         $data = array(
             'name' => $user->name,
@@ -60,7 +60,7 @@ class AuthorForgotForm extends Component
         sendMail($mailConfig);
         
         $this->email = null;
-        session()->flash('success','We have e-mailed your password reset link');
+        session()->flash('success','Hemos enviado por correo electrónico su enlace de restablecimiento de contraseña');
     }
     public function render()
     {

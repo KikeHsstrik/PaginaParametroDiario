@@ -46,9 +46,9 @@ class Categories extends Component
         if($saved){
             $this->dispatchBrowserEvent('hideCategoriesModal');
             $this->category_name = null;
-            $this->showToastr('New category has been successfully added.','success');
+            $this->showToastr('La nueva categoría se ha añadido correctamente.','success');
         }else{
-            $this->showToastr('Something went wrong.','error');
+            $this->showToastr('Algo salió mal.','error');
         }
     }
 
@@ -73,9 +73,9 @@ class Categories extends Component
             if($updated){
                 $this->dispatchBrowserEvent('hideCategoriesModal');
                 $this->updateCategoryMode = false;
-                $this->showToastr('Category has been successfully updated.','success');
+                $this->showToastr('La categoría se ha actualizado correctamente.','success');
             }else{
-                $this->showToastr('Something went wrong','error');
+                $this->showToastr('Algo salió mal','error');
             }
         }
     }
@@ -96,9 +96,9 @@ class Categories extends Component
             $this->dispatchBrowserEvent('hideSubCategoriesModal');
             $this->parent_category = null;
             $this->subcategory_name = null;
-            $this->showToastr('New SubCategory has been successfully added.','success');
+            $this->showToastr('La nueva subcategoría se ha añadido correctamente.','success');
         }else{
-            $this->showToastr('Something went wrong','error');
+            $this->showToastr('Algo salió mal','error');
         }
     }
 
@@ -128,9 +128,9 @@ class Categories extends Component
             if($updated){
                 $this->dispatchBrowserEvent('hideSubCategoriesModal');
                 $this->updateSubCategoryMode = false;
-                $this->showToastr('SubCategory has been successfully updated.','success');
+                $this->showToastr('La subcategoría se ha actualizado correctamente.','success');
             }else{
-                $this->showToastr('Something went wrong','error');
+                $this->showToastr('Algo salió mal','error');
             }
         }
     }
@@ -138,8 +138,8 @@ class Categories extends Component
     public function deleteCategory($id){
         $category = Category::find($id);
         $this->dispatchBrowserEvent('deleteCategory',[
-            'title'=>'Are you sure?',
-            'html'=>'You want to delete <b>'.$category->category_name.'</b> category',
+            'title'=>'¿Seguro?',
+            'html'=>'Desea eliminar la categoría <b>'.$category->category_name.'</b> ',
             'id'=>$id
         ]);
     }
@@ -153,19 +153,19 @@ class Categories extends Component
             foreach($subcategories as $subcat){
                 $totalPosts += Post::where('category_id', $subcat->id)->get()->count();
             }
-            $this->showToastr('This category has ('.$totalPosts.') posts related to it, cannot be deleted.','error');
+            $this->showToastr('Esta categoría cuenta con('.$totalPosts.') los mensajes relacionados con ella, no pueden suprimirse.','error');
         }else{
             SubCategory::where('parent_category', $category->id)->delete();
             $category->delete();
-            $this->showToastr('Category has been successfully deleted.','info');
+            $this->showToastr('La categoría se ha eliminado correctamente.','info');
         }
     }
 
     public function deleteSubCategory($id){
         $subcategory = SubCategory::find($id);
         $this->dispatchBrowserEvent('deleteSubCategory',[
-            'title'=>'Are you sure?',
-            'html'=>'You want to delete <b>'.$subcategory->subcategory_name.'</b> subcategory',
+            'title'=>'¿Seguro?',
+            'html'=>'Desea eliminar la subcategoría <b>'.$subcategory->subcategory_name.'</b> ',
             'id'=>$id
         ]);
     }
@@ -175,10 +175,10 @@ class Categories extends Component
         $posts = Post::where('category_id', $subcategory->id)->get()->toArray();
 
         if( !empty($posts) && count($posts) > 0 ){
-            $this->showToastr('This subcategory has ('.count($posts).') posts related to it, cannot be deleted.','error');
+            $this->showToastr('Esta subcategoría tiene ('.count($posts).') los mensajes relacionados con ella, no pueden suprimirse.','error');
         }else{
             $subcategory->delete();
-            $this->showToastr('Subcategory has been successfully deleted.','info');
+            $this->showToastr('La subcategoría se ha eliminado correctamente.','info');
         }
     }
 
@@ -190,7 +190,7 @@ class Categories extends Component
             Category::where('id',$index)->update([
                'ordering'=>$newPosition
             ]);
-            $this->showToastr('Categories ordering have been successfully updated.','success');
+            $this->showToastr('Los pedidos por categorías se han actualizado correctamente.','success');
         }
     }
 

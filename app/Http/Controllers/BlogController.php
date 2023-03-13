@@ -36,6 +36,14 @@ class BlogController extends Controller
     }
 
     
+    public function den_ciu(Request $request, $slug){
+        if(!$slug){
+            return abort(404);
+        } else {
+            return view('front.pages.category_posts');
+        }
+    }
+    
    
 
     public function searchBlog(Request $request){

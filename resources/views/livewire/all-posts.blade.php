@@ -2,13 +2,13 @@
 
     <div class="row">
         <div class="col-md-6 mb-3">
-            <label for="" class="form-label">Search</label>
-            <input type="text" class="form-control" placeholder="Keyword..." wire:model='search'>
+            <label for="" class="form-label">Buscar</label>
+            <input type="text" class="form-control" placeholder="Buscar..." wire:model='search'>
         </div>
         <div class="col-md-2 mb-3">
-            <label for="" class="form-label">Category</label>
+            <label for="" class="form-label">Categoría</label>
             <select class="form-select" wire:model='category'>
-                <option value="">-- No selected ---</option>
+                <option value="">--- No seleccionado ---</option>
                 @foreach (\App\Models\SubCategory::whereHas('posts')->get() as $category)
                     <option value="{{ $category->id }}">{{ $category->subcategory_name }}</option>
                 @endforeach
@@ -20,9 +20,9 @@
             
        
         <div class="col-md-2 mb-3">
-            <label for="" class="form-label">Author</label>
+            <label for="" class="form-label">Autor</label>
             <select  class="form-select" wire:model='author'>
-                <option value="">-- No selected ---</option>
+                <option value="">--- No seleccionado ---</option>
                 @foreach(\App\Models\User::whereHas('posts')->get() as $author)
                 <option value="{{ $author->id }}">{{ $author->name }}</option>
                 @endforeach
@@ -31,10 +31,10 @@
 
         @endif
         <div class="col-md-2 mb-3">
-            <label for="" class="form-label">orderBy</label>
+            <label for="" class="form-label">Ordenar Por</label>
             <select class="form-select" wire:model='orderBy'>
-                <option value="asc">ASC</option>
-                <option value="desc">DESC</option>
+                <option value="asc">Ascendente</option>
+                <option value="desc">Descendente</option>
             </select>
         </div>
 
@@ -50,13 +50,13 @@
                 <h3 class="m-0 mb-1">{{$post->post_title}}</h3>
             </div>
             <div class="d-flex">
-                <a href="{{ route('author.posts.edit-post',['post_id'=>$post->id]) }}" class="card-btn">Edit</a>
-                <a href="" wire:click.prevent='deletePost({{$post->id}})' class="card-btn">Delete</a>
+                <a href="{{ route('author.posts.edit-post',['post_id'=>$post->id]) }}" class="card-btn">Editar</a>
+                <a href="" wire:click.prevent='deletePost({{$post->id}})' class="card-btn">Borrar</a>
             </div>
         </div>
     </div>
     @empty
-      <span class="text-danger">No post(s) found</span>
+      <span class="text-danger">No se ha encontrado ningúna noticia</span>
     @endforelse
 
    </div>

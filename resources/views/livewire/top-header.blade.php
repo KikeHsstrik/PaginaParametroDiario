@@ -42,9 +42,9 @@
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <a href="{{ route('author.profile') }}" class="dropdown-item">Profile</a>
+                <a href="{{ route('author.profile') }}" class="dropdown-item">Perfil</a>
                 <div class="dropdown-divider"></div>
-                <a href="{{ route('author.logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                <a href="{{ route('author.logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Cerrar sesión</a>
                 <form action="{{ route('author.logout') }}" id="logout-form" method="POST">@csrf</form>
               </div>
             </div>
@@ -53,10 +53,10 @@
             <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="./index.html" >
+                  <a class="nav-link" href="" >
                    
                     <span class="nav-link-title">
-                      Home
+                      Inicio
                     </span>
                   </a>
                 </li>
@@ -76,7 +76,7 @@
                     <a class="nav-link" href="{{ route('author.authors') }}" >
                       
                       <span class="nav-link-title">
-                        Authors
+                        Autores
                       </span>
                     </a>
                   </li>
@@ -88,15 +88,15 @@
                   <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                    
                     <span class="nav-link-title">
-                      Posts
+                      Noticias
                     </span>
                   </a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ route('author.posts.add-post') }}" >
-                      Add new
+                      Añadir Nueva Noticia
                     </a>
                   <a class="dropdown-item" href="{{ route('author.posts.all_posts') }}" >
-                      All Posts
+                    Todos las Noticias
                     </a>
                   </div>
                 </li>
@@ -105,12 +105,12 @@
                   <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                     
                     <span class="nav-link-title">
-                      Settings
+                      Ajustes
                     </span>
                   </a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{route('author.settings')}}" >
-                      General Settings
+                      Configuración general
                     </a>
             
                   </div>

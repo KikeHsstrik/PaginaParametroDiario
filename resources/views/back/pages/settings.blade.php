@@ -4,7 +4,7 @@
    <div class="row align-items-center">
        <div class="col">
            <h2 class="page-title">
-               Settings
+            Configuración
            </h2>
        </div>
    </div>
@@ -12,13 +12,13 @@
    <div class="card">
     <ul class="nav nav-tabs" data-bs-toggle="tabs">
       <li class="nav-item">
-        <a href="#tabs-home-17" class="nav-link active" data-bs-toggle="tab">General Settings</a>
+        <a href="#tabs-home-17" class="nav-link active" data-bs-toggle="tab">Configuración general</a>
       </li>
       <li class="nav-item">
-        <a href="#tabs-profile-17" class="nav-link" data-bs-toggle="tab">Logo & Favicon</a>
+        <a href="#tabs-profile-17" class="nav-link" data-bs-toggle="tab">Logotipo y Favicon</a>
       </li>
       <li class="nav-item">
-        <a href="#tabs-activity-17" class="nav-link" data-bs-toggle="tab">Social Media</a>
+        <a href="#tabs-activity-17" class="nav-link" data-bs-toggle="tab">Redes sociales</a>
       </li>
     </ul>
     <div class="card-body">
@@ -32,7 +32,7 @@
           <div>
             <div class="row">
               <div class="col-md-6">
-                <h3>Set blog logo</h3>
+                <h3>Establecer logotipo del noticiero</h3>
                 <div class="mb-2" style="max-width: 200px">
                   <img src="" alt="" class="img-thumbnail" id="logo-image-preview" data-ijabo-default-img="{{ \App\Models\Setting::find(1)->blog_logo }}">
                 </div>
@@ -41,11 +41,11 @@
                     <div class="mb-2">
                       <input type="file" name="blog_logo" class="form-control">
                     </div>
-                    <button class="btn btn-primary">Change logo</button>
+                    <button class="btn btn-primary">Cambiar logotipo</button>
                 </form>
               </div>
               <div class="col-md-6">
-                <h3>Set blog favicon</h3>
+                <h3>Establecer el favicon del noticiero</h3>
                 <div class="mb-2" style="max-width: 100px">
                      <img src="" id="favicon-image-preview" class="img-thumbnail" data-ijabo-default-img="{{ \App\Models\Setting::find(1)->blog_favicon }}">
                 </div>
@@ -54,7 +54,7 @@
                   <div class="mb-2">
                     <input type="file" name="blog_favicon" class="form-control">
                   </div>
-                  <button class="btn btn-primary">Change favicon</button>
+                  <button class="btn btn-primary">Cambiar el icono</button>
                 </form>
               </div>
             </div>

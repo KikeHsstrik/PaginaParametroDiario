@@ -9123,7 +9123,9 @@ Navbar vertical
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 100vh; }
+  min-height: 100vh;
+}
+
 
 .page-center {
   justify-content: center; }
