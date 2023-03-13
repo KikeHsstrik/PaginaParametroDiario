@@ -15,11 +15,20 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('front.pages.example');
+
 // });
 
+
+
+
+
+
+
 Route::view('/','front.pages.home')->name('home');
+
+
+
+
 
 Route::get('/article/{any}',[BlogController::class,'readPost'])->name('read_post');
 Route::get('/category/{any}',[BlogController::class,'categoryPosts'])->name('category_posts');

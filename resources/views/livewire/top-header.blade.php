@@ -66,7 +66,7 @@
                     <a class="nav-link" href="{{ route('author.categories') }}" >
                       
                       <span class="nav-link-title">
-                          Categories
+                        Categorías
                       </span>
                     </a>
                   </li>

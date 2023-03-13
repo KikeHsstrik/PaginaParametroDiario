@@ -1,10 +1,11 @@
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset('css\style.css')}}" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ asset('css\2nd_Styles.css')}}">
 
+    
 
-<header class="navigation">
+<header class="navigation  fondo-verdecuadro">
     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center color-verde1-default px-lg-5">
             <div class="col-lg-12">
@@ -42,23 +43,28 @@
         </div>
     </div>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light px-0">
+
+
+    
+        <nav class="navbar navbar-expand-lg  navbar-dark navbar-light px-0">
             <a class="navbar-brand order-1 py-0" href="/">
                 <img loading="prelaod" decoding="async" class="img-fluid" src="{{ blogInfo()->blog_logo }}"
                     alt="{{ blogInfo()->blog_name }}" style="max-width: 100px">
             </a>
-            <div class="navbar-actions order-3 ml-0 ml-md-4">
-                <button aria-label="navbar toggler" class="navbar-toggler border-0" type="button"
-                    data-toggle="collapse" data-target="#navigation"> <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+            
+        
             <form action="{{ route('search_posts') }}" class="search order-lg-3 order-md-2 order-3 ml-auto">
-                <input id="search-query" name="query" value="{{ Request('query') }}" type="search" placeholder="Search..." autocomplete="off">
+                
+                <input id="search-query" name="query" value="{{ Request('query') }}" type="search" placeholder="Buscar..." autocomplete="off">
             </form>
             <div class="collapse navbar-collapse text-center order-lg-2 order-4" id="navigation">
                 <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
-                    <li class="nav-item"> <a href="/" class="nav-link" href="about.html">Inicio</a>
-                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" href="/">  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        style="fill: rgb(66, 70, 66);transform: ;msFilter:;">
+                        <path d="M12.74 2.32a1 1 0 0 0-1.48 0l-9 10A1 1 0 0 0 3 14h2v7a1 1 0 0 0 1 
+                        1h12a1 1 0 0 0 1-1v-7h2a1 1 0 0 0 1-1 1 1 0 0 0-.26-.68z"></path></svg> Inicio</a>
+                 
                     @foreach( \App\Models\Category::whereHas('subcategories', function($q){
                         $q->whereHas('posts');
                     })->orderBy('ordering','asc')->get() as $category )
@@ -71,13 +77,13 @@
                             <a class="dropdown-item" href="{{ route('category_posts',$subcategory->slug) }}">{{ $subcategory->subcategory_name }}</a>
                             @endforeach
                         </div>
-                    </li>
+                    </li>;
                     @endforeach
                     @foreach( \App\Models\SubCategory::where('parent_category',0)->whereHas('posts')->orderBy('ordering','asc')->get() as $subcategory )
                     <li class="nav-item"> <a class="nav-link" href="{{ route('category_posts',$subcategory->slug) }}">{{ $subcategory->subcategory_name }}</a>
                     </li>
                     @endforeach
-                    <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a>
+                    <li class="nav-item"> <a class="nav-link" href="">Denuncia Ciudadana</a>
                     </li>
                 </ul>
             </div>

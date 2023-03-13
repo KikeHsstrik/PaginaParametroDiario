@@ -63,7 +63,7 @@
 
         @if( count($related_posts) > 0)
         <div class="widget-list mt-5">
-            <h2 class="mb-2">Related posts</h2>
+            <h2 class="mb-2">Noticias Relacionados</h2>
 
             @foreach($related_posts as $item)
             <a class="media align-items-center" href="{{ route('read_post',$item->post_slug) }}">
@@ -97,7 +97,7 @@
                 (d.head || d.body).appendChild(s);
                 })();
             </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+           {{--  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> --}}
         </div>
     </div>
     <div class="col-lg-4">
@@ -106,19 +106,17 @@
                 <div class="col-lg-12">
                     <div class="widget">
                         <div class="widget-body">
-                            <img loading="lazy" decoding="async" src="/front/images/author.jpg" alt="About Me"
+                            <img loading="lazy" decoding="async" src="/front/images/noti.jpg" alt="About Me"
                                 class="w-100 author-thumb-sm d-block">
-                            <h2 class="widget-title my-3">Hootan Safiyari</h2>
-                            <p class="mb-3 pb-2">Hello, I’m Hootan Safiyari. A Content writter, Developer and Story
-                                teller. Working as a Content writter at CoolTech Agency. Quam nihil …</p> <a
-                                href="about.html" class="btn btn-sm btn-outline-primary">Know
-                                More</a>
+                            <h2 class="widget-title my-3">"No te pierdas ni un solo detalle con Parámetro Diario".</h2>
+                            <p class="mb-3 pb-2">"Parámetro Diario, la voz de la verdad en el mundo de las noticias".</p> <a
+                                href="about.html" class="btn btn-sm btn-outline-primary">Ver noticias</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-6">
                     <div class="widget">
-                        <h2 class="section-title mb-3">Latest posts</h2>
+                        <h2 class="section-title mb-3">Últimas Noticias</h2>
                         <div class="widget-body">
                             <div class="widget-list">
                                 @foreach(latest_sidebar_posts($post->id) as $item)

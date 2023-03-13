@@ -2,6 +2,6 @@
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Welcome to Larablog')
 @section('content')
 
-Page content here.......
+Contenido de la página aquí.......
 
 @endsection

@@ -19,9 +19,91 @@
 @endsection
 @section('content')
 
-<div class="row no-gutters-lg">
+
+
+
+
+
+<div class="container-fluid mt-3 pt-3">
+  <div class="container">
+  <div class="row">
+      
+      <div class="col-lg-6 px-0">
+          <div class="position-relative overflow-hidden" style="height: 500px;">
+              <img class="img-fluid w-100 h-100" src="img\image4.png" style="object-fit: cover;">
+              <div class="overlay">
+                  <div class="mb-2">
+                      <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
+                          href="">Local</a>
+                      <a class="text-white" href=""><small>Febrero 11, 2023</small></a>
+                  </div>
+                  <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">En Tulancingo hay 200 combis con sistemas de videovigilancia</a>
+              </div>
+          </div>
+          
+      </div>
+      <div class="col-lg-6 px-0">
+          <div class="row mx-0">
+              <div class="col-md-6 px-0">
+                  <div class="position-relative overflow-hidden" style="height: 250px;">
+                      <img class="img-fluid w-100 h-100" src="img\image4.png" style="object-fit: cover;">
+                      <div class="overlay">
+                          <div class="mb-2">
+                              <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
+                                  href="">Local</a>
+                              <a class="text-white" href=""><small>Febrero 11, 2023</small></a>
+                          </div>
+                          <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">En Tulancingo hay 200 combis con sistemas de videovigilancia</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 px-0">
+                  <div class="position-relative overflow-hidden" style="height: 250px;">
+                      <img class="img-fluid w-100 h-100" src="img\image5.png" style="object-fit: cover;">
+                      <div class="overlay">
+                          <div class="mb-2">
+                              <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
+                                  href="">Local</a>
+                              <a class="text-white" href=""><small>Febrero 10, 2023</small></a>
+                          </div>
+                          <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Benjamín Rico inauguró el programa Primero tu Salud</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 px-0">
+                  <div class="position-relative overflow-hidden" style="height: 250px;">
+                      <img class="img-fluid w-100 h-100" src="img\image6.jpg" style="object-fit: cover;">
+                      <div class="overlay">
+                          <div class="mb-2">
+                              <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
+                                  href="">Local</a>
+                              <a class="text-white" href=""><small>Febrero 9, 2023</small></a>
+                          </div>
+                          <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Conoce a la Cholondrina, bailarina que se viralizó con Medio Metro</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 px-0">
+                  <div class="position-relative overflow-hidden" style="height: 250px;">
+                      <img class="img-fluid w-100 h-100" src="img\image7.png" style="object-fit: cover;">
+                      <div class="overlay">
+                          <div class="mb-2">
+                              <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
+                                  href="">Local</a>
+                              <a class="text-white" href=""><small>Febrero 7, 2023</small></a>
+                          </div>
+                          <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Entregaron tarjetas a productores en Actopan</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+ </div> 
+<div class="row no-gutters-lg mt-3">
     <div class="col-12">
-      <h2 class="section-title">Latest Articles</h2>
+      <h2 class="section-title">Ultimas Noticias</h2>
     </div>
     <div class="col-lg-8 mb-5 mb-lg-0">
       <div class="row">
@@ -31,7 +113,7 @@
             <a href="{{ route('read_post', single_latest_post()->post_slug) }}">
               <div class="card-image">
                 <div class="post-info"> <span class="text-uppercase">{{ date_formatter(single_latest_post()->created_at) }}</span>
-                  <span class="text-uppercase">{{ readDuration(single_latest_post()->post_title,single_latest_post()->post_content) }} @choice('min|mins',readDuration(single_latest_post()->post_title,single_latest_post()->post_content)) read</span>
+                  <span class="text-uppercase">{{ readDuration(single_latest_post()->post_title,single_latest_post()->post_content) }} @choice('min|mins',readDuration(single_latest_post()->post_title,single_latest_post()->post_content)) Leer</span>
                 </div>
                 <img loading="lazy" decoding="async" src="/storage/images/post_images/{{single_latest_post()->featured_image}}" alt="Post Thumbnail" class="w-100">
               </div>
@@ -39,7 +121,7 @@
             <div class="card-body px-0 pb-1">
               <h2 class="h1"><a class="post-title" href="{{ route('read_post', single_latest_post()->post_slug) }}">{{single_latest_post()->post_title}}</a></h2>
               <p class="card-text">{!! Str::ucfirst(words(single_latest_post()->post_content,35)) !!}</p>
-              <div class="content"> <a class="read-more-btn" href="{{ route('read_post', single_latest_post()->post_slug) }}">Read Full Article</a>
+              <div class="content"> <a class="read-more-btn" href="{{ route('read_post', single_latest_post()->post_slug) }}">Leer Noticia completo</a>
               </div>
             </div>
           </article>
@@ -52,7 +134,7 @@
             <a href="{{ route('read_post',$item->post_slug) }}">
               <div class="card-image">
                 <div class="post-info"> <span class="text-uppercase">{{ date_formatter($item->created_at) }}</span>
-                  <span class="text-uppercase">{{ readDuration($item->post_title,$item->post_content) }} @choice('min|mins', readDuration($item->post_title,$item->post_content)) read</span>
+                  <span class="text-uppercase">{{ readDuration($item->post_title,$item->post_content) }} @choice('min|mins', readDuration($item->post_title,$item->post_content)) Leer</span>
                 </div>
                 <img loading="lazy" decoding="async" src="/storage/images/post_images/thumbnails/resized_{{$item->featured_image}}" alt="Post Thumbnail" class="w-100">
               </div>
@@ -64,7 +146,7 @@
               </ul>
               <h2><a class="post-title" href="{{ route('read_post',$item->post_slug) }}">{{$item->post_title}}</a></h2>
               <p class="card-text">{!! Str::ucfirst(words($item->post_content, 25)) !!}</p>
-              <div class="content"> <a class="read-more-btn" href="{{ route('read_post',$item->post_slug) }}">Read Full Article</a>
+              <div class="content"> <a class="read-more-btn" href="{{ route('read_post',$item->post_slug) }}">Leer Noticia completo</a>
               </div>
             </div>
           </article>
@@ -78,17 +160,20 @@
   <div class="col-lg-12">
     <div class="widget">
       <div class="widget-body">
-        <img loading="lazy" decoding="async" src="/front/images/author.jpg" alt="About Me" class="w-100 author-thumb-sm d-block">
-        <h2 class="widget-title my-3">Hootan Safiyari</h2>
-        <p class="mb-3 pb-2">Hello, I’m Hootan Safiyari. A Content writter, Developer and Story teller. Working as a Content writter at CoolTech Agency. Quam nihil …</p> <a href="about.html" class="btn btn-sm btn-outline-primary">Know
-          More</a>
+        <img loading="lazy" decoding="async" src="/front/images/news.jpeg" alt="" class="w-100 author-thumb-sm d-block">
+        <h2 class="widget-title my-3">Somos un medio de comunicación enfocado a crear contenido por y para líderes de opinión. </h2>
+        <p class="mb-3 pb-2">
+          <br>
+          Somos contenido libre, independiente, objetivo para
+tomadores de decisión en el mundo de economía y finanzas.
+        </a>
       </div>
     </div>
   </div>
   @if(recommended_posts())
   <div class="col-lg-12 col-md-6">
     <div class="widget">
-      <h2 class="section-title mb-3">Recommended</h2>
+      <h2 class="section-title mb-3">Recomendados</h2>
       <div class="widget-body">
         <div class="widget-list">
           @foreach(recommended_posts() as $item)

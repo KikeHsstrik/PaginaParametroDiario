@@ -35,6 +35,9 @@ class BlogController extends Controller
         
     }
 
+    
+   
+
     public function searchBlog(Request $request){
         $query = request()->query('query');
         if($query && strlen($query) >= 2){
@@ -52,7 +55,7 @@ class BlogController extends Controller
                            ->orderBy('created_at','desc')
                            ->paginate(6);
            $data = [
-               'pageTitle'=>'Search for :: '.request()->query('query'),
+               'pageTitle'=>'Buscar:  '.request()->query('query'),
                'posts'=>$posts
            ];
 

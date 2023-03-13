@@ -6,7 +6,7 @@
     <div class="row align-items-center">
       <div class="col">
         <h2 class="page-title">
-          Categories & Subcategories
+          Categorías y subcategorías
         </h2>
       </div>
     </div>

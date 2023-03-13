@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header">
                   <ul class="nav nav-tabs card-header-tabs">
-                    <h4>Categories</h4>
+                    <h4>Categorías</h4>
                     <li class="nav-item ms-auto">
                         <a href="" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#categories_modal">Add Category</a>
                     </li>
@@ -16,8 +16,8 @@
                         <table class="table table-vcenter card-table table-striped">
                           <thead>
                             <tr>
-                              <th>Category name</th>
-                              <th>N. of Subcategories</th>
+                              <th>Nombre de la categoría</th>
+                              <th>N. de Subcategorías</th>
                               <th class="w-1"></th>
                             </tr>
                           </thead>
@@ -55,7 +55,9 @@
                   <ul class="nav nav-tabs card-header-tabs">
                     <h4>SubCategories</h4>
                     <li class="nav-item ms-auto">
-                        <a href="" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#subcategories_modal">Add SubCategory</a>
+                        <a href="" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#subcategories_modal">Agregar subcategoría
+
+                        </a>
                     </li>
                   </ul>
                 </div>
@@ -64,9 +66,9 @@
                         <table class="table table-vcenter card-table table-striped">
                           <thead>
                             <tr>
-                              <th>SubCategory name</th>
-                              <th>Parent Category</th>
-                              <th>N. of posts</th>
+                              <th>Nombre de subcategoría</th>
+                              <th>Categoría principal</th>
+                              <th>N. de noticias</th>
                               <th class="w-1"></th>
                             </tr>
                           </thead>
@@ -83,8 +85,8 @@
                               </td>
                               <td>
                                 <div class="btn-group">
-                                     <a href="#" class="btn btn-sm btn-primary" wire:click.prevent='editSubCategory({{$subcategory->id}})'>Edit</a> &nbsp;
-                                     <a href="#" wire:click.prevent='deleteSubCategory({{$subcategory->id}})' class="btn btn-sm btn-danger">Delete</a>
+                                     <a href="#" class="btn btn-sm btn-primary" wire:click.prevent='editSubCategory({{$subcategory->id}})'>Editar</a> &nbsp;
+                                     <a href="#" wire:click.prevent='deleteSubCategory({{$subcategory->id}})' class="btn btn-sm btn-danger">Borrar</a>
                                 </div>
                                
                               </td>
@@ -93,7 +95,7 @@
                             @empty
                                 <tr>
                                     <td colspan="4">
-                                        <span class="text-danger">No subcategory found.</span>
+                                        <span class="text-danger">No se encontró ninguna subcategoría.</span>
                                     </td>
                                 </tr>
                             @endforelse
