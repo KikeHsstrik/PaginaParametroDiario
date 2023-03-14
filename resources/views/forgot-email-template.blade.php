@@ -1,2 +1,2 @@
-- Hi <b>{{ $name }}
+- Hola <b>{{ $name }}
 {!! $body_message !!}

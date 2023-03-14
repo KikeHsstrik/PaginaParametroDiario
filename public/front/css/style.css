@@ -24,7 +24,7 @@ p {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #131313;
-  font-family: "Neuton", serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -217,7 +217,7 @@ a:hover {
 }
 
 .font-secondary {
-  font-family: "Neuton", serif !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .font-weight-medium {
@@ -584,7 +584,7 @@ a:hover {
 }
 
 .read-more-btn {
-  font-family: "Neuton", serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
 

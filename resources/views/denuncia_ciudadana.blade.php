@@ -1,5 +1,22 @@
-<!-- News With Sidebar Start -->
-<div class="container-fluid mt-4">
+@extends('front.layouts.pages-layout')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Bienvenida a Parametro Diario')
+@section('content')
+<link href="{{ asset('css\2nd_styles.css')}}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+<style>
+  body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif  !important;
+}
+
+</style>
+
+<div class="row">
+   <!-- News With Sidebar Start -->
+   <div class="container-fluid mt-4">
     <div class="container">
         <div class="row">
             
@@ -14,7 +31,22 @@
                       <div class="container">
                         <form id="selecciones" class="form-group">
                          
-                       
+                          
+                            <p class="h6 d-block mb-3 text-secondary" href="">¿Desea que su información sea anónima?</p>
+                            @if(session('success'))
+                            <h6 class="alert alert-success">{{session('success')}}</h6>
+                            @endif
+                            
+                              @if(count($errors)>0)
+                            
+                              @foreach($errors->all() as $error)
+        
+                              <h6 class="alert alert-danger">{{$error}}</h6>
+        
+                            
+                              @endforeach
+        
+                            @endif
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="opciones" id="opcion1" value="yes">
                                 <label class="form-check-label" for="opcion1">
@@ -29,8 +61,8 @@
                             </div>
                         </form>
                         <div id="form-si" class="mt-3 border-top border-dark" style="display:none;">
-                          <form class="row mt-3 g-3 needs-validation" novalidate id="form-select-si"  method="POST">
-                            
+                          <form class="row mt-3 g-3 needs-validation" novalidate id="form-select-si" action="{{route('addDenuncia')}}" method="POST">
+                            @csrf
                         
                                  <div class="col-md-12">
                                   <label for="texto_denuncia_anonima_si" class="form-label h6 d-block text-secondary text-uppercase font-weight-bold">Denuncia</label>
@@ -59,8 +91,8 @@
                           
                         </div>
                         <div id="form-no" class="border-top border-dark" style="display:none;">
-                          <form class="row mt-3 g-3 needs-validation" novalidate id="form-select-si"  method="POST">
-                         
+                          <form class="row mt-3 g-3 needs-validation" novalidate id="form-select-si"  action="{{route('addDenunciano')}}"  method="POST">
+                            @csrf
                         
                          
                             <div class="col-md-12">
@@ -193,3 +225,9 @@
             
         </div>
     </div>
+
+  </div>
+
+</div>
+<script  src="{{ asset('js/main.js') }}"></script>
+@endsection

@@ -23,9 +23,11 @@
     <!-- # Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+{{-- 
     <link
         href="https://fonts.googleapis.com/css2?family=Neuton:wght@700&family=Work+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> --}}
 
     <!-- # CSS Plugins -->
     <link rel="stylesheet" href="/front/plugins/bootstrap/bootstrap.min.css">
@@ -33,6 +35,12 @@
 
     <!-- # Main Style Sheet -->
     <link rel="stylesheet" href="/front/css/style.css">
+    <link rel="stylesheet" href="{{ asset('css\2nd_Styles.css')}}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+ 
+
+
 </head>
 
 <body>
@@ -55,6 +63,7 @@
     <script src="/front/plugins/bootstrap/bootstrap.min.js"></script>
     @stack('scripts')
     <!-- Main Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/front/js/script.js"></script>
 
 </body>

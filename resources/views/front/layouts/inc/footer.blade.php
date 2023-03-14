@@ -21,5 +21,5 @@
         </div>
     </div>
     
-    <div class="copyright bg-dark content">&copy; <script>document.write(new Date().getFullYear())</script> Derechos reservados © Tritón Comunicaciones S.A de C.V. &amp; By <href="/">{{ blogInfo()->blog_name }}</href=></div>
+    <div class="copyright bg-dark content">&copy; <script>document.write(new Date().getFullYear())</script> Derechos reservados © Comunicaciones S.A de C.V. &amp; By <href="/">{{ blogInfo()->blog_name }}</href=></div>
 </footer>

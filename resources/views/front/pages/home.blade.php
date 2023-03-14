@@ -1,5 +1,5 @@
 @extends('front.layouts.pages-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Welcome to Larablog')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Bienvenido a Parametro Diario')
 @section('meta_tags')
     <meta name="robots" content="index,follow"/>
     <meta name="title" content="{{ blogInfo()->blog_name }}"/>
@@ -19,89 +19,100 @@
 @endsection
 @section('content')
 
-
-
+<div class="container-fluid mt-3 pt-3">
+  <div class="container">
+    
+  </div>
+</div>
 
 
 
 <div class="container-fluid mt-3 pt-3">
   <div class="container">
   <div class="row">
-      
-      <div class="col-lg-6 px-0">
-          <div class="position-relative overflow-hidden" style="height: 500px;">
-              <img class="img-fluid w-100 h-100" src="img\image4.png" style="object-fit: cover;">
-              <div class="overlay">
-                  <div class="mb-2">
-                      <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
-                          href="">Local</a>
-                      <a class="text-white" href=""><small>Febrero 11, 2023</small></a>
-                  </div>
-                  <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">En Tulancingo hay 200 combis con sistemas de videovigilancia</a>
-              </div>
-          </div>
+     
+  {{--   Carrusel de mejores noticias --}}
+      <div class="col-lg-8">
+        <h2 class="section-title mb-3">Mejores Noticias</h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
           
-      </div>
-      <div class="col-lg-6 px-0">
-          <div class="row mx-0">
-              <div class="col-md-6 px-0">
-                  <div class="position-relative overflow-hidden" style="height: 250px;">
-                      <img class="img-fluid w-100 h-100" src="img\image4.png" style="object-fit: cover;">
-                      <div class="overlay">
-                          <div class="mb-2">
-                              <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
-                                  href="">Local</a>
-                              <a class="text-white" href=""><small>Febrero 11, 2023</small></a>
-                          </div>
-                          <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">En Tulancingo hay 200 combis con sistemas de videovigilancia</a>
-                      </div>
-                  </div>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="img/1.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="font-weight-bold text-light bg-dark">"Las autoridades han anunciado un nuevo plan para abordar el problema de ..."</h5>
+                <p class="font-weight-bold text-light  text-capitalize">"La situación en [nombre de lugar] sigue siendo tensa después de ..."</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5 mb-3">Ver noticia</button>
               </div>
-              <div class="col-md-6 px-0">
-                  <div class="position-relative overflow-hidden" style="height: 250px;">
-                      <img class="img-fluid w-100 h-100" src="img\image5.png" style="object-fit: cover;">
-                      <div class="overlay">
-                          <div class="mb-2">
-                              <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
-                                  href="">Local</a>
-                              <a class="text-white" href=""><small>Febrero 10, 2023</small></a>
-                          </div>
-                          <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Benjamín Rico inauguró el programa Primero tu Salud</a>
-                      </div>
-                  </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/2.jpg" alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5 mb-2">Ver noticia</button>
+                <h5 class="font-weight-bold text-light bg-dark">"El gobierno ha aprobado un nuevo</h5>
+                <p class="font-weight-bold text-light ">"Los expertos están preocupados por el aumento en los casos de [enfermedad] en todo el mundo.</p>
+               
               </div>
-              <div class="col-md-6 px-0">
-                  <div class="position-relative overflow-hidden" style="height: 250px;">
-                      <img class="img-fluid w-100 h-100" src="img\image6.jpg" style="object-fit: cover;">
-                      <div class="overlay">
-                          <div class="mb-2">
-                              <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
-                                  href="">Local</a>
-                              <a class="text-white" href=""><small>Febrero 9, 2023</small></a>
-                          </div>
-                          <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Conoce a la Cholondrina, bailarina que se viralizó con Medio Metro</a>
-                      </div>
-                  </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/3.jpg" alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="font-weight-bold text-light bg-dark">"Los residentes de [nombre de lugar] han</h5>
+                <p class="font-weight-bold text-light ">"El famoso [nombre de celebridad] ha sorprendido a sus fans con su última declaración sobre ..."</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5 mb-2">Ver noticia</button>
               </div>
-              <div class="col-md-6 px-0">
-                  <div class="position-relative overflow-hidden" style="height: 250px;">
-                      <img class="img-fluid w-100 h-100" src="img\image7.png" style="object-fit: cover;">
-                      <div class="overlay">
-                          <div class="mb-2">
-                              <a class="badge color-verde2-default text-uppercase font-weight-semi-bold p-2 mr-2"
-                                  href="">Local</a>
-                              <a class="text-white" href=""><small>Febrero 7, 2023</small></a>
-                          </div>
-                          <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Entregaron tarjetas a productores en Actopan</a>
-                      </div>
-                  </div>
-              </div>
+            </div>
           </div>
-      </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+        </div>
+   
+      </div> 
+      <div class="col-lg-4">
+        <div class="widget-blocks">
+        <div class="row">
+      
+          @if(recommended_posts())
+          <div class="col-lg-12 col-md-6">
+            <div class="widget">
+              <h2 class="section-title mb-3">Recomendados</h2>
+              <div class="widget-body">
+                <div class="widget-list">
+                  @foreach(recommended_posts() as $item)
+                  <a class="media align-items-center" href="{{ route('read_post',$item->post_slug) }}">
+                    <img loading="lazy" decoding="async" src="/storage/images/post_images/thumbnails/thumb_{{$item->featured_image}}" alt="Post Thumbnail" class="w-100">
+                    <div class="media-body ml-3">
+                      <h6 style="margin-top:-5px">{{ $item->post_title }}</h6>
+                      <p class="mb-0 small">{!! Str::ucfirst(words($item->post_content,7)) !!}</p>
+                    </div>
+                  </a>
+                  @endforeach
+                </div>
+              </div>
+            </div>
+          </div>
+          @endif
+        
+      
+        
+        </div>
+        </div>
+        </div>
   </div>
   </div>
  </div> 
-<div class="row no-gutters-lg mt-3">
+<div class="row no-gutters-lg mt-1">
     <div class="col-12">
       <h2 class="section-title">Ultimas Noticias</h2>
     </div>

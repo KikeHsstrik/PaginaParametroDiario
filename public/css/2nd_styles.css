@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
 
+:root {
+    --font-family-sans-serif: "Montserrat", sans-serif !important;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
+
+  body {
+  
+    font-family: "Montserrat", sans-serif;
+   
+  }
 /* 
 Colores de pagina */
 .color-verde1-default{
@@ -30,9 +41,6 @@ Colores de pagina */
 }
 
 
-
-
-
 .text-verde {
     color: #017302 !important;
   }
@@ -42,6 +50,17 @@ Colores de pagina */
     color: #009D0E;
 }
 
+
+.carousel-item img {
+  width: 100%;
+  height: 400px; /* Establece la altura fija de la imagen */
+  object-fit: cover; /* Escala la imagen para cubrir toda el área disponible */
+}
+
+.carousel {
+  border: 1px solid #939292; /* Establece un borde sólido de 1 píxel con color gris claro */
+  border-radius: 5px; /* Añade un borde redondeado de 5 píxeles */
+}
 
 
 
