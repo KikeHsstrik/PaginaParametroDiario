@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="/front/css/style.css">
     <link rel="stylesheet" href="{{ asset('css\2nd_Styles.css')}}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     
  
 

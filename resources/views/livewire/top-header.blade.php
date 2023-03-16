@@ -100,6 +100,23 @@
                     </a>
                   </div>
                 </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                    
+                    <span class="nav-link-title">
+                      Denuncias
+                    </span>
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="" >
+                     Denuncias Anónimas
+                    </a>
+                    <a class="dropdown-item" href="" >
+                      Denuncias No Anónimas
+                    </a>
+            
+                  </div>
+                </li>
                 @if( auth()->user()->type == 1 )
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
@@ -115,8 +132,9 @@
             
                   </div>
                 </li>
+                
                 @endif
-              
+                
               </ul>
             </div>
           </div>
