@@ -25,7 +25,7 @@ Route::get('/search',[BlogController::class,'searchBlog'])->name('search_posts')
 
 
 Route::post('/denuncia_ciudadana', [denunciasController::class, 'storeAnonima'])->name('addDenuncia');
-Route::get('/denuncia_ciudadanaa', [denunciasController::class, 'denuncia_ciudadana'])->name('denuncia_ciudadana');
+Route::get('/denuncia_ciudadana', [denunciasController::class, 'denuncia_ciudadana'])->name('denuncia_ciudadana');
 
 
 Route::post('/denuncia__ciudadana', [denunciasController::class, 'storeNoAnonima'])->name('addDenunciano');

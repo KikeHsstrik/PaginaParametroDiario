@@ -12,7 +12,7 @@ use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use routes\author;
+
 
 
 class AuthorController extends Controller
@@ -119,7 +119,7 @@ class AuthorController extends Controller
 
             $post_thumbnails_path = $path.'thumbnails';
             if( !Storage::disk('public')->exists($post_thumbnails_path) ){
-                Storage::disk('public')->makeDirectory($post_thumbnails_path, 0755, true, true);
+                Storage::disk('public')->mkdir($post_thumbnails_path, 0755, true, true);
             }
 
             // Create square thumbnail
@@ -188,7 +188,7 @@ class AuthorController extends Controller
 
             $post_thumbnails_path = $path.'thumbnails';
             if( !Storage::disk('public')->exists($post_thumbnails_path) ){
-                Storage::disk('public')->makeDirectory($post_thumbnails_path, 0755, true, true);
+                Storage::disk('public')->mkdir($post_thumbnails_path, 0755, true, true);
             }
 
             Image::make( storage_path('app/public/'.$path.$new_filename) )

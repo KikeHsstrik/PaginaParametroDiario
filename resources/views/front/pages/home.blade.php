@@ -31,8 +31,8 @@
   <div class="container">
   <div class="row">
      
-  {{--   Carrusel de mejores noticias --}}
-      <div class="col-lg-8">
+
+{{--       <div class="col-lg-8">
         <h2 class="section-title mb-3">Mejores Noticias</h2>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -78,7 +78,7 @@
           </a>
         </div>
    
-      </div> 
+      </div>  --}}
       <div class="col-lg-4">
         <div class="widget-blocks">
         <div class="row">
