@@ -14,9 +14,13 @@ Route::get('/denuncia_ciudadana', function () {
 
 
 
+
+
+
+
 Route::view('/','front.pages.home')->name('home');
 
-;
+
 
 Route::get('/article/{any}',[BlogController::class,'readPost'])->name('read_post');
 Route::get('/category/{any}',[BlogController::class,'categoryPosts'])->name('category_posts');
@@ -30,3 +34,5 @@ Route::get('/denuncia_ciudadana', [denunciasController::class, 'denuncia_ciudada
 
 Route::post('/denuncia__ciudadana', [denunciasController::class, 'storeNoAnonima'])->name('addDenunciano');
 Route::get('/denuncia__ciudadana', [denunciasController::class, 'denuncia__ciudadana'])->name('denuncia__ciudadana');
+
+

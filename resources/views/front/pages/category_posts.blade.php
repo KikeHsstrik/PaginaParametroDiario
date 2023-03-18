@@ -16,7 +16,7 @@
                     <a href="{{ route('read_post',$item->post_slug) }}">
                         <div class="card-image">
                             <div class="post-info"> <span class="text-uppercase">{{ date_formatter($item->created_at) }}</span>
-                                <span class="text-uppercase">{{ readDuration($item->post_title,$item->post_content) }} @choice('min|mins',readDuration($item->post_title,$item->post_content)) read</span>
+                                
                             </div>
                             <img loading="lazy" decoding="async" src="/storage/images/post_images/thumbnails/resized_{{$item->featured_image}}" alt="Post Thumbnail"
                                 class="w-100" width="420" height="280">

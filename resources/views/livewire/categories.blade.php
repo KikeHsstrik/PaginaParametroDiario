@@ -11,6 +11,7 @@
                     </li>
                   </ul>
                 </div>
+
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-vcenter card-table table-striped">
@@ -32,6 +33,7 @@
                               <td>
                                 <div class="btn-group">
                                      <a href="#" class="btn btn-sm btn-primary" wire:click.prevent='editCategory({{$category->id}})'>Editar</a> &nbsp;
+                                     
                                      <a href="#" wire:click.prevent='deleteCategory({{$category->id}})' class="btn btn-sm btn-danger">Borrar</a>
                                 </div>
                                

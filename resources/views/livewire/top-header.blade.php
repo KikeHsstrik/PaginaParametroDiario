@@ -72,6 +72,7 @@
                   </li>
 
                  
+                 
                     <li class="nav-item">
                     <a class="nav-link" href="{{ route('author.authors') }}" >
                       
@@ -79,6 +80,23 @@
                         Autores
                       </span>
                     </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                      
+                      <span class="nav-link-title">
+                        Denuncias
+                      </span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{{ route ('author.denunciasAnonimas') }}" >
+                       Denuncias Anónimas
+                      </a>
+                      <a class="dropdown-item" href="{{ route ('author.denunciasNoAnonimas') }}" >
+                        Denuncias No Anónimas
+                      </a>
+              
+                    </div>
                   </li>
                   @endif
 
@@ -100,23 +118,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                    
-                    <span class="nav-link-title">
-                      Denuncias
-                    </span>
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="" >
-                     Denuncias Anónimas
-                    </a>
-                    <a class="dropdown-item" href="" >
-                      Denuncias No Anónimas
-                    </a>
-            
-                  </div>
-                </li>
+               
                 @if( auth()->user()->type == 1 )
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >

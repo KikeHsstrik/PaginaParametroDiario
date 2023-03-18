@@ -27,9 +27,13 @@
     <link rel="stylesheet" href="/jquery-ui-1.13.2/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="/amsify/amsify.suggestags.css">
     <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+  
+   
+
     @stack('stylesheets')
     @livewireStyles
     <link href="/back/dist/css/demo.min.css" rel="stylesheet"/>
+
     <style>
       .swal2-popup{
         font-size: .85rem;
@@ -54,6 +58,7 @@
     </div>
    
     <!-- Libs JS -->
+
     <script src="/back/dist/libs/jquery/jquery-3.6.0.min.js"></script>
     <script src="/back/dist/libs/ijabo/ijabo.min.js"></script>
     <script src="/back/dist/libs/ijaboCropTool/ijaboCropTool.min.js"></script>

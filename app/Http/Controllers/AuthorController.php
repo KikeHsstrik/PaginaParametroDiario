@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\File;
 use App\Models\Setting;
+use App\Models\denuncias_si_anonimasModel;
+use App\Models\denuncias_no_anonimasModel;
 
 use App\Models\Post;
 use Illuminate\Support\Str;
@@ -21,11 +23,16 @@ class AuthorController extends Controller
         return view('back.pages.home');
     }
 
+    public function categories2(Request $request){
+        return view('back.pages.categories2');
+    }
+
     public function logout(){
         Auth::guard('web')->logout();
         return redirect()->route('author.login');
     }
 
+    
     public function ResetForm(Request $request, $token = null){
         $data = [
             'pageTitle'=>'Reset Password'

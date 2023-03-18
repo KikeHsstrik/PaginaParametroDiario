@@ -47,7 +47,7 @@ $(document).ready(function(){
 
 
 
-
+/* 
   $(document).ready(function() {
     // Configuramos Splide
     var splide = new Splide('#myCarousel', {
@@ -78,3 +78,4 @@ $(document).ready(function(){
     });
   });
 
+ */

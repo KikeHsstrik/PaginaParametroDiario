@@ -113,4 +113,16 @@ Colores de pagina */
   color: white;
 }
 
-
+.gallery{
+  max-width: 800px;
+  margin: auto;
+}
+.gallery-cell{
+  width: 100%;
+  max-height: 500px;
+  margin-right: 10px;
+}
+.gallery-cell img{
+  width: 100%;
+  background-size: contain;
+}

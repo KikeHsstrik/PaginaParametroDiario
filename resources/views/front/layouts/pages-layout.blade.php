@@ -38,7 +38,10 @@
     <link rel="stylesheet" href="{{ asset('css\2nd_Styles.css')}}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
+
+
+
  
 
 
@@ -60,6 +63,11 @@
 
 
     <!-- # JS Plugins -->
+    <!-- script de la libería -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"> </script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"> </script>  
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
     <script src="/front/plugins/jquery/jquery.min.js"></script>
     <script src="/front/plugins/bootstrap/bootstrap.min.js"></script>
     @stack('scripts')

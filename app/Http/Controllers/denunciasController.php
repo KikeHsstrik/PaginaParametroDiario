@@ -34,6 +34,20 @@ class denunciasController extends Controller
         
     }
 
+    
+    public function mostrarDenunciasAnonimas()
+{
+    $denuncias_anonimas = denuncias_si_anonimasModel::all();
+    return view('back.pages.denunciasAnonimas', ['denuncias_anonimas' => $denuncias_anonimas]);
+}
+
+public function mostrarDenunciasNoAnonimas()
+{
+    $denuncias_no_anonimas = denuncias_no_anonimasModel::all();
+    return view('back.pages.denunciasNoAnonimas', ['denuncias_no_anonimas' => $denuncias_no_anonimas]);
+}
+
+ 
 
     public function storeNoAnonima(Request $request)
     {
@@ -68,4 +82,26 @@ class denunciasController extends Controller
     }
     
    
+
+
+//Eliminar denuncias
+public function eliminarDenunciaAnonima($id)
+{
+    $denuncia = denuncias_si_anonimasModel::findOrFail($id);
+    $denuncia->delete();
+    
+    return redirect()->route('author.denunciasAnonimas');
+}
+
+
+public function eliminarDenunciaNoAnonima($id)
+{
+    $denuncia = denuncias_no_anonimasModel::findOrFail($id);
+    $denuncia->delete();
+    
+    return redirect()->route('author.denunciasNoAnonimas');
+}
+
+
+    
 }
