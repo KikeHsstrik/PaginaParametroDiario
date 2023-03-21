@@ -35,7 +35,7 @@
         <div class="row align-items-center color-verde2-default py-3 px-lg-5">
             <div class="col-lg-12">
                 <a href="" class="navbar-brand p-0 d-none d-lg-block">
-                    <h1 class="m-0 display-4 text-uppercase  text-center  text-white"> <img class="img-fluid" 
+                    <h1 class="m-0 display-4 text-uppercase  font-weight-bold text-center   text-white"> <img class="img-fluid" 
                         height="50px" width="70px" src="{{ asset('img/logo.png') }}" alt=""> Parámetro<span class="text-white   text-center font-weight-normal">  Diario</span></h1>
                 </a>
             </div>
@@ -62,31 +62,32 @@
             </form>
             <div class="collapse navbar-collapse text-center order-lg-2 order-4" id="navigation">
                 <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
-
-                    <li class="nav-item"> <a class="nav-link" href="/">  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                   
+                    <li class="nav-item"> <a class="nav-link font-weight-bold" href="/"> 
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         style="fill: rgb(66, 70, 66);transform: ;msFilter:;">
                         <path d="M12.74 2.32a1 1 0 0 0-1.48 0l-9 10A1 1 0 0 0 3 14h2v7a1 1 0 0 0 1 
                         1h12a1 1 0 0 0 1-1v-7h2a1 1 0 0 0 1-1 1 1 0 0 0-.26-.68z"></path></svg> Inicio</a>
-                 
+                    </li>
                     @foreach( \App\Models\Category::whereHas('subcategories', function($q){
                         $q->whereHas('posts');
                     })->orderBy('ordering','asc')->get() as $category )
-                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button"
+                    <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle  font-weight-bold" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ $category->category_name }}
                         </a>
                         <div class="dropdown-menu"> 
                             @foreach( \App\Models\SubCategory::where('parent_category',$category->id)->whereHas('posts')->orderby('ordering','asc')->get() as $subcategory )
-                            <a class="dropdown-item" href="{{ route('category_posts',$subcategory->slug) }}">{{ $subcategory->subcategory_name }}</a>
+                            <a class="dropdown-item  font-weight-bold" href="{{ route('category_posts',$subcategory->slug) }}">{{ $subcategory->subcategory_name }}</a>
                             @endforeach
                         </div>
                     </li>;
                     @endforeach
                     @foreach( \App\Models\SubCategory::where('parent_category',0)->whereHas('posts')->orderBy('ordering','asc')->get() as $subcategory )
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('category_posts',$subcategory->slug) }}">{{ $subcategory->subcategory_name }}</a>
+                    <li class="nav-item"> <a class="nav-link  font-weight-bold" href="{{ route('category_posts',$subcategory->slug) }}">{{ $subcategory->subcategory_name }}</a>
                     </li>
                     @endforeach
-                    <li class="nav-item"><a class="nav-link"  >Denuncia Ciudadana</a> </li>
+                    <li class="nav-item"><a class="nav-link  font-weight-bold" href="{{ route('denuncia_ciudadana') }}" >Denuncia Ciudadana</a> </li>
                 </ul>
             </div>
         </nav>

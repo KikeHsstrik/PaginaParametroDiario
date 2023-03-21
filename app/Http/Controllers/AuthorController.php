@@ -7,12 +7,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\File;
 use App\Models\Setting;
+use App\Models\denuncias_si_anonimasModel;
+use App\Models\denuncias_no_anonimasModel;
 
 use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use routes\author;
+
 
 
 class AuthorController extends Controller
@@ -21,11 +23,16 @@ class AuthorController extends Controller
         return view('back.pages.home');
     }
 
+    public function categories2(Request $request){
+        return view('back.pages.categories2');
+    }
+
     public function logout(){
         Auth::guard('web')->logout();
         return redirect()->route('author.login');
     }
 
+    
     public function ResetForm(Request $request, $token = null){
         $data = [
             'pageTitle'=>'Reset Password'
@@ -119,7 +126,7 @@ class AuthorController extends Controller
 
             $post_thumbnails_path = $path.'thumbnails';
             if( !Storage::disk('public')->exists($post_thumbnails_path) ){
-                Storage::disk('public')->makeDirectory($post_thumbnails_path, 0755, true, true);
+                Storage::disk('public')->mkdir($post_thumbnails_path, 0755, true, true);
             }
 
             // Create square thumbnail
@@ -188,7 +195,7 @@ class AuthorController extends Controller
 
             $post_thumbnails_path = $path.'thumbnails';
             if( !Storage::disk('public')->exists($post_thumbnails_path) ){
-                Storage::disk('public')->makeDirectory($post_thumbnails_path, 0755, true, true);
+                Storage::disk('public')->mkdir($post_thumbnails_path, 0755, true, true);
             }
 
             Image::make( storage_path('app/public/'.$path.$new_filename) )

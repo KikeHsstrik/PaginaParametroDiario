@@ -23,9 +23,11 @@
     <!-- # Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+{{-- 
     <link
         href="https://fonts.googleapis.com/css2?family=Neuton:wght@700&family=Work+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> --}}
 
     <!-- # CSS Plugins -->
     <link rel="stylesheet" href="/front/plugins/bootstrap/bootstrap.min.css">
@@ -33,6 +35,16 @@
 
     <!-- # Main Style Sheet -->
     <link rel="stylesheet" href="/front/css/style.css">
+    <link rel="stylesheet" href="{{ asset('css\2nd_Styles.css')}}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
+
+
+
+ 
+
+
 </head>
 
 <body>
@@ -51,10 +63,16 @@
 
 
     <!-- # JS Plugins -->
+    <!-- script de la libería -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"> </script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"> </script>  
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
     <script src="/front/plugins/jquery/jquery.min.js"></script>
     <script src="/front/plugins/bootstrap/bootstrap.min.js"></script>
     @stack('scripts')
     <!-- Main Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/front/js/script.js"></script>
 
 </body>

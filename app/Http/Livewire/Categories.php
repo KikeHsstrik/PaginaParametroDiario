@@ -144,6 +144,8 @@ class Categories extends Component
         ]);
     }
 
+    
+
     public function deleteCategoryAction($id){
         $category = Category::where('id',$id)->first();
         $subcategories = SubCategory::where('parent_category',$category->id)->whereHas('posts')->with('posts')->get();

@@ -17,9 +17,13 @@ if(!function_exists('blogInfo')){
 /**
  * DATE FORMAT eg: January 12, 2024
  */
-if(!function_exists('date_formatter')){
+
+
+if (!function_exists('date_formatter')) {
     function date_formatter($date){
-        return Carbon::createFromFormat('Y-m-d H:i:s',$date)->isoFormat('LL');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)
+            ->locale('es')
+            ->isoFormat('LL');
     }
 }
 
@@ -80,7 +84,7 @@ if(!function_exists('latest_home_6posts')){
         return Post::with('author')
                    ->with('subcategory')
                    ->skip(1)
-                   ->limit(6)
+                   ->limit(10)
                    ->orderBy('created_at','desc')
                    ->get();
     }
@@ -98,6 +102,63 @@ if(!function_exists('recommended_posts')){
                     ->get();
     }
 }
+
+
+$positiveTags = [
+    'buenasnoticias',
+    'positividad',
+    'optimismo',
+    'inspiración',
+    'motivación',
+    'alegría',
+    'esperanza',
+    'solidaridad',
+    'amabilidad',
+    'generosidad',
+    'empatía',
+    'resiliencia',
+    'superación',
+    'logros',
+    'historiasdeéxito',
+    'valorespositivos'
+];
+
+if(!function_exists('buenas_noticias')){
+    function buenas_noticias(){
+        $positiveTags = [
+            'buenasnoticias',
+            'positividad',
+            'optimismo',
+            'inspiración',
+            'motivación',
+            'alegría',
+            'esperanza',
+            'solidaridad',
+            'amabilidad',
+            'generosidad',
+            'empatía',
+            'resiliencia',
+            'superación',
+            'logros',
+            'historiasdeéxito',
+            'valorespositivos'
+        ];
+        
+        return Post::with('author')
+                    ->with('subcategory')
+                    ->where(function($query) use ($positiveTags) {
+                        foreach($positiveTags as $tag) {
+                            $query->orWhere('post_tags', 'like', '%'.$tag.'%');
+                        }
+                    })
+                    ->limit(4)
+                    ->inRandomOrder()
+                    ->get();
+    }
+}
+
+
+
 
 /**
  * POSTS WITH NUMBER OF POSTS
