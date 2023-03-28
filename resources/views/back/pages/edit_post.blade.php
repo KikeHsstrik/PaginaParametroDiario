@@ -20,7 +20,7 @@
             <div class="col-md-9">
                 <div class="mb-3">
                     <label class="form-label">Título de la noticia</label>
-                    <input type="text" class="form-control" name="post_title" placeholder="Enter post title" value="{{ $post->post_title }}">
+                    <input type="text" class="form-control" name="post_title" placeholder="Ingrese el título de la noticia" value="{{ $post->post_title }}">
                     <span class="text-danger error-text post_title_error"></span>
                 </div>
                 <div class="mb-3">

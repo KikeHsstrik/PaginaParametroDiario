@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif  !important;
 }
 
+
 </style>
 
 <div class="row">
@@ -22,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
             
             <section  id="formulario_denuncia_anonima_sii" class="col-lg-8">
               <section class="d-flex justify-content-center align-items-center">
+                
                 <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-12   p-4"> 
                   <div class="container ">
                     <p class="h2 d-block mb-3 text-secondary text-center text-uppercase font-weight-bold">¡Ciudadano!</p>
@@ -221,6 +223,8 @@ h1, h2, h3, h4, h5, h6 {
                 </div>
                 
             </div>
+           
+
 
             
         </div>
@@ -229,5 +233,6 @@ h1, h2, h3, h4, h5, h6 {
   </div>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"> </script>    
 <script  src="{{ asset('js/main.js') }}"></script>
 @endsection

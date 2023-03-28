@@ -107,13 +107,15 @@ class AuthorController extends Controller
             return response()->json(['status'=>0, 'msg'=>'Algo salió mal']);
         }
     }
-
+  
     public function createPost(Request $request){
         $request->validate([
             'post_title'=>'required|unique:posts,post_title',
             'post_content'=>'required',
             'post_category'=>'required|exists:sub_categories,id',
             'featured_image'=>'required|mimes:jpeg,jpg,png|max:1024',
+          
+            
         ]);
 
         if($request->hasFile('featured_image')){
@@ -126,7 +128,7 @@ class AuthorController extends Controller
 
             $post_thumbnails_path = $path.'thumbnails';
             if( !Storage::disk('public')->exists($post_thumbnails_path) ){
-                Storage::disk('public')->mkdir($post_thumbnails_path, 0755, true, true);
+                Storage::disk('public')->makeDirectory($post_thumbnails_path, 0755, true, true);
             }
 
             // Create square thumbnail
@@ -152,16 +154,19 @@ class AuthorController extends Controller
                  $saved = $post->save();
 
                  if($saved){
-                    return response()->json(['code'=>1, 'msg'=>'Se ha creado correctamente una nueva noticia.']);
+                    return response()->json(['code'=>1, 'msg'=>'La noticia se ha creado con éxito.']);
                  }else{
-                    return response()->json(['code'=>3, 'msg'=>'Algo ha fallado al guardar los datos de la entrada.']);
+                    return response()->json(['code'=>3, 'msg'=>'Algo salió mal al guardar los datos de la noticia.']);
                  }
             }else{
-                return response()->json(['code'=>3,'msg'=>'Algo salió mal al subir la imagen destacada.']);
+                return response()->json(['code'=>3,'msg'=>'Algo salió mal al cargar la imagen destacada.']);
             }
         }
     }
 
+
+
+   
 
     public function editPost(Request $request){
         if( !request()->post_id ){
@@ -195,7 +200,7 @@ class AuthorController extends Controller
 
             $post_thumbnails_path = $path.'thumbnails';
             if( !Storage::disk('public')->exists($post_thumbnails_path) ){
-                Storage::disk('public')->mkdir($post_thumbnails_path, 0755, true, true);
+                Storage::disk('public')->makeDirectory($post_thumbnails_path, 0755, true, true);
             }
 
             Image::make( storage_path('app/public/'.$path.$new_filename) )

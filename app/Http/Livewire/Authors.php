@@ -75,12 +75,12 @@ class Authors extends Component
 
           if($saved){
 
-            // Mail::send('new-author-email-template', $data, function($message) use ($author_email, $author_name){
-            //      $message->from('noreply@example.com','Larablog');
-            //      $message->to($author_email,$author_name)
-            //              ->subject('Account creation');
-            // });
-            $mail_body = view('new-author-email-template', $data)->render();
+             Mail::send('new-author-email-template', $data, function($message) use ($author_email, $author_name){
+                  $message->from('parametrodiarioofial@gmail.com','Parametro Diario');
+                  $message->to($author_email,$author_name)
+                          ->subject('Account creation');
+             });
+           /*  $mail_body = view('new-author-email-template', $data)->render();
 
             $mailConfig = array(
                 'mail_from_email' => env('EMAIL_FROM_ADDRESS'),
@@ -91,7 +91,7 @@ class Authors extends Component
                 'mail_body' => $mail_body
             );
 
-            sendMail($mailConfig);
+            sendMail($mailConfig); */
 
             $this->showToastr('Se ha añadido un nuevo autor','success');
             $this->name = $this->email = $this->username = $this->author_type = $this->direct_publisher = null;

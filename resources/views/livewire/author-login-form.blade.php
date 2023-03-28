@@ -24,7 +24,7 @@
           </div>
           <div class="mb-2">
             <label class="form-label">
-              Password
+              Contraseña
               <span class="form-label-description">
                 <a href="{{ route('author.forgot-password') }}">Olvidé la contraseña</a>
               </span>

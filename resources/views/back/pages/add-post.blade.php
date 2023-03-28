@@ -1,5 +1,5 @@
 @extends('back.layouts.pages-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Add new post')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Agregar nueva noticia')
 @section('content')
   
 <div class="page-header d-print-none">
@@ -20,7 +20,7 @@
             <div class="col-md-9">
                 <div class="mb-3">
                     <label class="form-label">Título de la Noticia</label>
-                    <input type="text" class="form-control" name="post_title" placeholder="Enter post title">
+                    <input type="text" class="form-control" name="post_title" placeholder="Ingrese el título de la noticia">
                     <span class="text-danger error-text post_title_error"></span>
                 </div>
                 <div class="mb-3">

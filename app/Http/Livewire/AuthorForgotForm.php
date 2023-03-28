@@ -41,12 +41,12 @@ class AuthorForgotForm extends Component
             'body_message'=>$body_message,
         );
 
-        // Mail::send('forgot-email-template', $data, function($message) use ($user){
-        //     $message->from('noreply@example.com','Larablog');
-        //     $message->to($user->email, $user->name)
-        //             ->subject('Reset Password');
-        // });
-        $mail_body = view('forgot-email-template', $data)->render();
+        Mail::send('forgot-email-template', $data, function($message) use ($user){
+             $message->from('noreply@example.com','Larablog');
+             $message->to($user->email, $user->name)
+                     ->subject('Reset Password');
+         });
+       /*  $mail_body = view('forgot-email-template', $data)->render();
 
         $mailConfig = array(
             'mail_from_email'=> env('EMAIL_FROM_ADDRESS'),
@@ -58,7 +58,7 @@ class AuthorForgotForm extends Component
         );
 
         sendMail($mailConfig);
-        
+         */
         $this->email = null;
         session()->flash('success','Hemos enviado por correo electrónico su enlace de restablecimiento de contraseña');
     }

@@ -14,8 +14,7 @@ Route::get('/denuncia_ciudadana', function () {
 
 
 
-
-
+;
 
 
 Route::view('/','front.pages.home')->name('home');
@@ -30,6 +29,7 @@ Route::get('/search',[BlogController::class,'searchBlog'])->name('search_posts')
 
 Route::post('/denuncia_ciudadana', [denunciasController::class, 'storeAnonima'])->name('addDenuncia');
 Route::get('/denuncia_ciudadana', [denunciasController::class, 'denuncia_ciudadana'])->name('denuncia_ciudadana');
+
 
 
 Route::post('/denuncia__ciudadana', [denunciasController::class, 'storeNoAnonima'])->name('addDenunciano');

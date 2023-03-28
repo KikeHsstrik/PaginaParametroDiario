@@ -1,5 +1,5 @@
 @extends('back.layouts.pages-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Settings')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Ajustes')
 @section('content')
    <div class="row align-items-center">
        <div class="col">

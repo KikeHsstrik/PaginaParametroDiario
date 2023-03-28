@@ -104,46 +104,18 @@ if(!function_exists('recommended_posts')){
 }
 
 
-$positiveTags = [
-    'buenasnoticias',
-    'positividad',
-    'optimismo',
-    'inspiración',
-    'motivación',
-    'alegría',
-    'esperanza',
-    'solidaridad',
-    'amabilidad',
-    'generosidad',
-    'empatía',
-    'resiliencia',
-    'superación',
-    'logros',
-    'historiasdeéxito',
-    'valorespositivos'
-];
+
+
+
+
 
 if(!function_exists('buenas_noticias')){
     function buenas_noticias(){
         $positiveTags = [
-            'buenasnoticias',
-            'positividad',
-            'optimismo',
-            'inspiración',
-            'motivación',
-            'alegría',
-            'esperanza',
-            'solidaridad',
-            'amabilidad',
-            'generosidad',
-            'empatía',
-            'resiliencia',
-            'superación',
-            'logros',
-            'historiasdeéxito',
-            'valorespositivos'
-        ];
-        
+        'buenasnoticias'
+    ];
+        $yesterday = Carbon::now()->subDay(); // fecha actual menos un día
+    
         return Post::with('author')
                     ->with('subcategory')
                     ->where(function($query) use ($positiveTags) {
@@ -151,12 +123,103 @@ if(!function_exists('buenas_noticias')){
                             $query->orWhere('post_tags', 'like', '%'.$tag.'%');
                         }
                     })
+                    ->whereDate('created_at', '>=', $yesterday) // filtra las publicaciones creadas en el último día
                     ->limit(4)
                     ->inRandomOrder()
                     ->get();
-    }
+    }    
 }
 
+
+
+
+if(!function_exists('ocho_columnas1')){
+    function ocho_columnas1(){
+        $columnasTags = ['8columnas1'];
+        $yesterday = Carbon::now()->subDay(); // fecha actual menos un día
+    
+        return Post::with('author')
+                    ->with('subcategory')
+                    ->where(function($query) use ($columnasTags) {
+                        foreach($columnasTags as $tag) {
+                            $query->orWhere('post_tags', 'like', '%'.$tag.'%');
+                        }
+                    })
+                    ->whereDate('created_at', '>=', $yesterday) // filtra las publicaciones creadas en el último día
+                    ->limit(1)
+                    ->inRandomOrder()
+                    ->get();
+    }    
+}
+
+if(!function_exists('ocho_columnas2')){
+    function ocho_columnas2(){
+        $columnas2Tags = ['8columnas2'];
+        $yesterday = Carbon::now()->subDay(); // fecha actual menos un día
+    
+        return Post::with('author')
+                    ->with('subcategory')
+                    ->where(function($query) use ($columnas2Tags) {
+                        foreach($columnas2Tags as $tag) {
+                            $query->orWhere('post_tags', 'like', '%'.$tag.'%');
+                        }
+                    })
+                    ->whereDate('created_at', '>=', $yesterday) // filtra las publicaciones creadas en el último día
+                    ->limit(2)
+                    ->inRandomOrder()
+                    ->get();
+    }
+    
+
+    
+}
+
+
+
+if(!function_exists('ocho_columnas3')){
+    function ocho_columnas3(){
+        $columnas3Tags = ['8columnas3'];
+        $yesterday = Carbon::now()->subDay(); // fecha actual menos un día
+    
+        return Post::with('author')
+                    ->with('subcategory')
+                    ->where(function($query) use ($columnas3Tags) {
+                        foreach($columnas3Tags as $tag) {
+                            $query->orWhere('post_tags', 'like', '%'.$tag.'%');
+                        }
+                    })
+                    ->whereDate('created_at', '>=', $yesterday) // filtra las publicaciones creadas en el último día
+                    ->limit(2)
+                    ->inRandomOrder()
+                    ->get();
+    }
+    
+
+    
+}
+
+
+if(!function_exists('carrusel')){
+    function carrusel(){
+        $carruselTag = ['carrusel'];
+        $yesterday = Carbon::now()->subDay(); // fecha actual menos un día
+    
+        return Post::with('author')
+                    ->with('subcategory')
+                    ->where(function($query) use ($carruselTag) {
+                        foreach($carruselTag as $tag) {
+                            $query->orWhere('post_tags', 'like', '%'.$tag.'%');
+                        }
+                    })
+                    ->whereDate('created_at', '>=', $yesterday) // filtra las publicaciones creadas en el último día
+                    ->limit(5)
+                    ->inRandomOrder()
+                    ->get();
+    }
+    
+
+    
+}
 
 
 

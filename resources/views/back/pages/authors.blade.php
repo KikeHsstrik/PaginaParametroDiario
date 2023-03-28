@@ -1,5 +1,5 @@
 @extends('back.layouts.pages-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Authors')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Editores')
 @section('content')
   
 @livewire('authors')

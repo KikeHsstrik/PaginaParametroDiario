@@ -53,7 +53,7 @@
             <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="" >
+                  <a class="nav-link"  >
                    
                     <span class="nav-link-title">
                       Inicio
@@ -77,7 +77,7 @@
                     <a class="nav-link" href="{{ route('author.authors') }}" >
                       
                       <span class="nav-link-title">
-                        Autores
+                        Editores
                       </span>
                     </a>
                   </li>
@@ -117,6 +117,16 @@
                     Todos las Noticias
                     </a>
                   </div>
+                </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('author.anuncios') }}" >
+                    
+                    <span class="nav-link-title">
+                      Anuncios
+                    </span>
+                  </a>
                 </li>
                
                 @if( auth()->user()->type == 1 )

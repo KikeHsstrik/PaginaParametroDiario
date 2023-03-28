@@ -36,6 +36,7 @@ return new class extends Migration
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *
@@ -43,7 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        
         Schema::dropIfExists('denuncias_si_anonimas');
         Schema::dropIfExists('denuncias_no_anonimas');
     }

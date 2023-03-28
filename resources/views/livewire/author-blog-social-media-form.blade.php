@@ -25,7 +25,7 @@
           </div>
           <div class="col-md-6">
             <div class="mb-3">
-              <label class="form-label">LinkeIn</label>
+              <label class="form-label">Twitter</label>
               <input type="text" class="form-control" placeholder="LinkeIn Url" wire:model='linkedin_url'>
               <span class="text-danger">@error('linkedin_url'){{ $message }}@enderror</span>
             </div>

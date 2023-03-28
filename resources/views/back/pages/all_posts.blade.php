@@ -1,5 +1,5 @@
 @extends('back.layouts.pages-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Posts')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Todos las noticias')
 @section('content')
 <div class="page-header d-print-none">
     <div class="row align-items-center">

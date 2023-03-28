@@ -58,13 +58,26 @@ Colores de pagina */
 }
 
 .carousel {
-  border: 1px solid #939292; /* Establece un borde sólido de 1 píxel con color gris claro */
   border-radius: 5px; /* Añade un borde redondeado de 5 píxeles */
 }
 
 
 
 /* Estilo de redes sociales */
+
+@media only screen and (max-width: 768px) {
+  .social-bar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .barra-redes {
+    display: none;
+  }
+}
+
+
 .icon-bar {
   position: fixed;
   top: 50%;
@@ -113,16 +126,179 @@ Colores de pagina */
   color: white;
 }
 
+
+
+
+
+/* Estilos personalizados para los botones de Next y Previous */
+
+/* Botón de Previous */
+.flickity-prev-next-button.previous {
+  background-color: #ccc!important;
+  border: none!important;
+  width: 42px!important;
+  height: 42px!important;
+  border-radius: 0!important;
+  transition: all 0.3s ease!important;
+  -webkit-border-radius: 0!important;
+  -moz-border-radius: 0!important;
+  -ms-border-radius: 0!important;
+  -o-border-radius: 0!important;
+  -webkit-transition: all 0.3s ease!important;
+  -moz-transition: all 0.3s ease!important;
+  -ms-transition: all 0.3s ease!important;
+  -o-transition: all 0.3s ease!important;
+}
+
+/* Efecto hover para el botón de Previous */
+.flickity-prev-next-button.previous:hover {
+  background-color: #999!important;
+}
+
+/* Botón de Next */
+.flickity-prev-next-button.next {
+  background-color: #ccc!important;
+  border: none!important;
+  width: 42px!important;
+  height: 42px!important;
+  border-radius: 0!important;
+  transition: all 0.3s ease!important;
+  -webkit-border-radius: 0!important;
+  -moz-border-radius: 0!important;
+  -ms-border-radius: 0!important;
+  -o-border-radius: 0!important;
+  -webkit-transition: all 0.3s ease!important;
+  -moz-transition: all 0.3s ease!important;
+  -ms-transition: all 0.3s ease!important;
+  -o-transition: all 0.3s ease!important;
+}
+
+/* Efecto hover para el botón de Next */
+.flickity-prev-next-button.next:hover {
+  background-color: #999999!important;
+}
+
+
+
+.fh5co_suceefh5co_height{
+  height:550px;
+  overflow:hidden;
+  width:100%;
+  position:relative}
+  .fh5co_suceefh5co_height>img{
+    height:560px;
+    width:100%}
+
+
+.fh5co_suceefh5co_height:hover>img{
+      transform: scale(1.2);
+      transition: transform 0.5s ease-in-out;
+    }
+
+
+
+ .fh5co_suceefh5co_height_position_absolute{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:-moz-linear-gradient(top, transparent 0%, transparent 1%, rgba(0,0,0,0.78) 100%);
+  background:-webkit-linear-gradient(top, transparent 0%, transparent 1%, rgba(0,0,0,0.78) 100%);
+  background:linear-gradient(to bottom, transparent 0%, transparent 1%, rgba(0,0,0,0.78) 100%);
+  z-index:5;
+  top:0}
+.fh5co_suceefh5co_height_position_absolute_font{
+  position:absolute;
+  width:100%;
+  height:100%;
+  color:#fff;
+  z-index:7;
+  top:75%;
+  left:5%;
+  padding:0 10px}
+
+.fh5co_good_font
+{color:#fff;
+  font-size:22px;
+  word-wrap:break-word}
+.fh5co_good_font:hover,.fh5co_good_font:focus{
+  color:#fff;
+  word-wrap:break-word;
+  text-decoration:none}
+.fh5co_suceefh5co_height_2{
+  height:275px;
+  overflow:hidden;
+  width:100%;
+  position:relative}
+.fh5co_suceefh5co_height_2>img{
+  height:300px;
+  width:100%}
+
+  .fh5co_suceefh5co_height_2:hover>img{
+    
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+.fh5co_good_font_2{
+  font-size:13px;
+  color:#fff;
+  word-wrap:break-word;
+  text-decoration:none}
+.fh5co_good_font_2:hover,.fh5co_good_font_2:focus{
+  color:#fff;
+  word-wrap:break-word;
+  text-decoration:none}
+.fh5co_suceefh5co_height_position_absolute_font_2{
+  position:absolute;
+  width:100%;
+  height:100%;
+  color:#fff;
+  z-index:7;
+  top:65%;
+  left:5%;
+  padding:0 10px}
+ .paddding
+ {
+  padding-left:2px!important;
+  padding-right:2px!important;
+  padding-top: 2px!important;
+  padding-bottom: 2px!important;
+}
+
+.carr-text{
+  font-size: 12px;
+}
+
+.carr-text2{
+  font-size: 10px;
+  color: #eeecec!important;
+}
+
+.carr-text1{
+  font-size: 18px;
+}
+
+.carr-text3{
+  font-size: 23px;
+  
+}
+
 .gallery{
   max-width: 800px;
   margin: auto;
 }
 .gallery-cell{
   width: 100%;
+
   max-height: 500px;
   margin-right: 10px;
 }
 .gallery-cell img{
   width: 100%;
+  height: auto;
   background-size: contain;
 }
+
+
+
+

@@ -18,7 +18,7 @@ class Authenticate extends Middleware
         if (! $request->expectsJson()) {
             // return route('login');
             if($request->routeIs('author.*')){
-                session()->flash('fail','You must sign in first');
+                session()->flash('fail','Debe iniciar sesión primero');
                 return route('author.login',['fail'=>true,'returnUrl'=>URL::current()]);
             }
         }
